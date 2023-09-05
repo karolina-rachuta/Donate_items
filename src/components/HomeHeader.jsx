@@ -1,19 +1,21 @@
-import {Link} from "react-router-dom";
+import React from 'react';
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const HomeHeader = () => {
     return (
-        <header className="container header__container">
+        <header className="container header__container" id="header">
             <nav>
                 <ul className="menu menu__login">
-                    <li><Link to="/logowanie">Zaloguj</Link></li>
-                    <li><Link to="/rejestracja">Załóż konto</Link></li>
+                    <li><RouterLink to="/logowanie">Zaloguj</RouterLink></li>
+                    <li><RouterLink to="/rejestracja">Załóż konto</RouterLink></li>
                 </ul>
                 <ul className="menu menu__home">
-                    <li>Start</li>
-                    <li>O co chodzi?</li>
-                    <li>O nas</li>
-                    <li>Fundacja i organizacje</li>
-                    <li>Kontakt</li>
+                    <li><ScrollLink to="header">Start</ScrollLink> </li>
+                    <li><ScrollLink to="threeColumns" >O co chodzi?</ScrollLink></li>
+                    <li><ScrollLink to="aboutUs">O nas</ScrollLink></li>
+                    <li><ScrollLink to="organizations">Fundacja i organizacje</ScrollLink></li>
+                    <li><ScrollLink to="contact">Kontakt</ScrollLink></li>
                 </ul>
             </nav>
             <div className="hero__box">
@@ -21,8 +23,8 @@ const HomeHeader = () => {
                     Oddaj niechciane rzeczy w zaufane ręce</p>
                 {/*<img src="../assets/Decoration.svg" alt="Decoration"/>*/}
                 <div className="hero__btn">
-                    <button><Link to="/logowanie">Oddaj <br/> rzeczy</Link></button>
-                    <button><Link to="/logowanie">Zorganizuj <br/> zbiórkę</Link></button>
+                    <button><RouterLink to="/logowanie">Oddaj <br/> rzeczy</RouterLink></button>
+                    <button><RouterLink to="/logowanie">Zorganizuj <br/> zbiórkę</RouterLink></button>
                 </div>
             </div>
         </header>
