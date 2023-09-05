@@ -4,6 +4,7 @@ import Oddaj from "./components/Oddaj.jsx";
 import Register from "./components/Register.jsx";
 import LogOut from "./components/LogOut.jsx";
 import Login from "./components/Login.jsx";
+import "./scss/main.scss";
 
 function App() {
     return (

@@ -1,0 +1,124 @@
+.header__container {
+  background-image: url(../../assets/Home-Hero-Image.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: -20rem center;
+  height: 60.1875rem;
+  max-height: 100vh;
+  position: relative;
+  @media only screen and (min-width: 1200px) {
+    background-position: -20rem center;
+    background-size: 70% auto;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    opacity: 0.5;
+    z-index: 0;
+    @media only screen and (min-width: 1200px) {
+      opacity: 0;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.menu__login {
+  a {
+    text-decoration: none;
+    color: $third-color;
+    font-size: 0.875rem;
+    font-family: $font-base;
+  }
+}
+
+.menu__home {
+  font-size: 1.125rem;
+  color: $fourth-color;
+  font-family: $font-base;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    font-size: 1.125rem;
+    color: $fourth-color;
+    font-family: $font-base;
+  }
+}
+
+.hero__container {
+display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .hero__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12.75rem;
+    text-align: center;
+    margin-right: 3.4375rem;
+    color: $fourth-color;
+    position: relative;
+    z-index: 1;
+    gap: 1rem;
+
+    p {
+      font-size: 2.375rem;
+      text-align: center;
+      line-height: 1.4474;
+      letter-spacing: -0.0475rem;
+      font-weight: 400;
+    }
+
+    .hero__btn {
+      margin-top: 1rem;
+      max-width: 42.125rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 300;
+      @media only screen and (min-width: 700px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      a {
+        text-decoration: none;
+        width: 40%;
+        border: 0.046875rem solid $fourth-color;
+        background-color: #fff;
+
+        button {
+          border: none;
+          background-color: #fff;
+          font-size: 36px;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: $fourth-color;
+          font-family: $font-base;
+          line-height: 1.25;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,10 @@
 @import "settings/reset";
 @import "settings/colors";
 @import "settings/fonts";
-@import "homeHeader";
-@import "threeColumns";
 @import "settings/mixins";
+@import "components/homeHeader";
+@import "components/threeColumns";
+@import "components/login";
 
 * {
   margin: 0;
@@ -20,7 +21,7 @@ html, body {
 
 .container {
   width: 100%;
-  //max-width: 1350px;
+  max-width: 1700px;
   padding: 1rem;
   margin: 0 auto;
 }

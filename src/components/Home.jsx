@@ -1,5 +1,4 @@
 import HomeHeader from "./HomeHeader.jsx";
-import Main from "./Main.jsx";
 import HomeThreeColumns from "./HomeThreeColumns.jsx";
 import AboutUs from "./AboutUs.jsx";
 import OddajRzeczy from "./OddajRzeczy.jsx";
@@ -10,7 +9,6 @@ const Home = () => {
     return (
         <>
             <HomeHeader/>
-            {/*<Main />*/}
             <HomeThreeColumns/>
             <OddajRzeczy />
             <AboutUs/>

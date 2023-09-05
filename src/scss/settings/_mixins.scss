@@ -1,8 +1,3 @@
-
-@mixin font-size($size_in_px) {
-  $base_font_size_in_px: 16px; // Ustaw swoją wielkość czcionki bazowej
-
-  $size_in_rem: $size_in_px / $base_font_size_in_px;
-
-  font-size: #{$size_in_rem}rem;
+@function pxToRem($px) {
+  @return $px / 16px + rem
 }
