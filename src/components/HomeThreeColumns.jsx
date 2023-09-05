@@ -1,6 +1,6 @@
 const HomeThreeColumns = () => {
     return (
-        <div>
+        <div className="container">
             <h1>trzy kolumny</h1>
 
         </div>

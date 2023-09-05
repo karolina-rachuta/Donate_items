@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <HomeHeader/>
-            {/*<Main />*/}
+            <Main />
             <HomeThreeColumns/>
 
         </>

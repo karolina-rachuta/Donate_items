@@ -1,6 +1,9 @@
 @import "settings/reset";
 @import "settings/colors";
 @import "settings/fonts";
+@import "homeHeader";
+@import "threeColumns";
+@import "settings/mixins";
 
 * {
   margin: 0;
@@ -8,6 +11,16 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: $font-base;
+  font-weight: 400;
+  font-size: 16px;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  //max-width: 1350px;
+  padding: 1rem;
+  margin: 0 auto;
 }
