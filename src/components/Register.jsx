@@ -1,6 +1,7 @@
 import Navigation from "./Navigation.jsx";
 import decoration from "../assets/Decoration.svg";
 import React, {useState} from "react";
+import {Link as RouterLink} from "react-router-dom";
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ const Register = () => {
                             {errorRepeatedPassword && <p className="error-message">{errorRepeatedPassword}</p>}
                         </div>
                         <div className="btn__container">
-                            <button type="submit">Login</button>
+                            <RouterLink to="/logowanie"><button type="submit">Login</button></RouterLink>
                             <button className="form__btn--clicked" type="submit"
                                     onClick={handleRegisterButton}>Register
                             </button>
