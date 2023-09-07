@@ -3,6 +3,7 @@ import decoration from "../assets/Decoration.svg";
 import React, {useState} from "react";
 import {Link as RouterLink} from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

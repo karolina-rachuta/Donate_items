@@ -2,14 +2,13 @@ import React, {useState} from 'react';
 import {Link as RouterLink} from "react-router-dom";
 import {Link as ScrollLink} from "react-scroll";
 
-const Navigation = () => {
-    const [registered, setRegistered] = useState(false);
-    const [logged, setLogged] = useState(false);
+const Navigation = ({logged, setLogged, email}) => {
+
     return (
         <nav>
             <ul className="menu menu__login">
-                <li><RouterLink to="/logowanie">Zaloguj</RouterLink></li>
-                <li><RouterLink to="/rejestracja">Załóż konto</RouterLink></li>
+                <><li><RouterLink to="/logowanie">Zaloguj</RouterLink></li>
+                <li><RouterLink to="/rejestracja">Załóż konto</RouterLink></li></>
             </ul>
             <ul className="menu menu__home">
                 <li><RouterLink to="/">Start</RouterLink> </li>

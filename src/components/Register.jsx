@@ -6,10 +6,10 @@ import {Link as RouterLink} from "react-router-dom";
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [repeatedPassword, setReapeatPassword] = useState("")
+    const [repeatedPassword, setRepeatedPassword] = useState("")
     const [errorEmail, setErrorEmail] = useState("");
     const [errorPassword, setErrorPassword] = useState("");
-    const [errorRepeatedPassword, setRepeatedPassword] = useState("");
+    const [errorRepeatedPassword, setErrorRepeatedPassword] = useState("");
     const handleRegisterButton = () => {
         if (!email.includes("@")) {
             setErrorEmail("Email has a wrong format!");
@@ -18,7 +18,7 @@ const Register = () => {
             setErrorPassword("Password is too short!");
         }
         if (password !== repeatedPassword) {
-            setRepeatedPassword("Passwords do not match!")
+            setErrorRepeatedPassword("Passwords do not match!")
         }
     }
     return (
@@ -45,7 +45,7 @@ const Register = () => {
                             <div className="form__box">
                                 <label htmlFor="repeatedPassword">Confirm Password </label>
                                 <input type="password" id="repeatedPassword" value={repeatedPassword}
-                                       onChange={(e) => setReapeatPassword(e.target.value)} className={errorRepeatedPassword ? "error-input" : "correct-input"}/>
+                                       onChange={(e) => setRepeatedPassword(e.target.value)} className={errorRepeatedPassword ? "error-input" : "correct-input"}/>
                             </div>
                             {errorRepeatedPassword && <p className="error-message">{errorRepeatedPassword}</p>}
                         </div>

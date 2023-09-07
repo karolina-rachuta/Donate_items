@@ -5,6 +5,7 @@ import OddajRzeczy from "./OddajRzeczy.jsx";
 import Organizations from "./Organizations.jsx";
 import Contact from "./Contact.jsx";
 
+// eslint-disable-next-line react/prop-types
 const Home = () => {
     return (
         <>
