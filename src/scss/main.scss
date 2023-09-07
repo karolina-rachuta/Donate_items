@@ -25,3 +25,17 @@ html, body {
   padding: 1rem;
   margin: 0 auto;
 }
+
+.btn {
+  color: #000;
+  font-size: pxToRem(18);
+  font-family: $font-base;
+  line-height: 1.78;
+  text-align: center;
+  font-weight: 300;
+  background-color: #ffffff;
+  width: pxToRem(117);
+  height: pxToRem(50);
+  border: pxToRem(0.75) solid $fourth-color;
+  cursor: pointer;
+}
