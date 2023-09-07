@@ -1,8 +1,21 @@
 import Navigation from "./Navigation.jsx";
 import decoration from "../assets/Decoration.svg";
-import React from "react";
+import React, {useState} from "react";
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorEmail, setErrorEmail] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+    const handleLoginButton = () => {
+        if (!email.includes("@")) {
+            setErrorEmail("Email has a wrong format!");
+        }
+        if (password.length < 6) {
+            setErrorPassword("Password is too short!");
+        }
+    }
+
     return (
         <div className="container">
             <Navigation/>
@@ -14,16 +27,23 @@ const Login = () => {
                         <div className="form__container">
                             <div className="form__box">
                                 <label htmlFor="email">Email </label>
-                                <input type="email" id="email"/>
+                                <input type="email" id="email" value={email}
+                                       onChange={(e) => setEmail(e.target.value)}
+                                       className={errorEmail? "error-input" : "correct-input"}/>
                             </div>
+                            {errorEmail && <p className="error-message">{errorEmail}</p>}
                             <div className="form__box">
                                 <label htmlFor="password">Password </label>
-                                <input type="password" id="password"/>
+                                <input type="password" id="password" value={password}
+                                       onChange={(e) => setPassword(e.target.value)}
+                                       className={errorPassword ? "error-input" : "correct-input"}/>
                             </div>
+                            {errorPassword && <p className="error-message">{errorPassword}</p>}
                         </div>
                         <div className="btn__container">
                             <button type="submit">Register</button>
-                            <button className="form__btn--clicked" type="submit">Login</button>
+                            <button className="form__btn--clicked" type="submit" onClick={handleLoginButton}>Login
+                            </button>
                         </div>
                     </div>
                 </div>

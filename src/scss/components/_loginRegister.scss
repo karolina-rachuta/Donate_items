@@ -47,12 +47,19 @@
         padding-top: pxToRem(30);
         padding-bottom: pxToRem(30);
 
+        .error-message {
+          color: red;
+          font-size: pxToRem(14);
+          //display: block;
+          //align-self: start;
+        }
+
         .form__box {
           text-align: left;
           max-width: pxToRem(250);
           width: 100%;
           height: pxToRem(62);
-          border-bottom: pxToRem(0.75) solid $third-color;
+          //border-bottom: pxToRem(0.75) solid $third-color;
           position: relative;
 
           label {
@@ -72,6 +79,14 @@
             font-size: 1rem;
             font-family: $font-base;
             background-color: $base-color;
+            //border-bottom: pxToRem(0.75) solid $third-color;
+          }
+          .error-input {
+            border-bottom: 1px solid red;
+          }
+
+          .correct-input {
+            border-bottom: pxToRem(0.75) solid $third-color;
           }
         }
       }
@@ -94,6 +109,7 @@
           font-weight: 300;
           border: none;
           background-color: #ffffff;
+          cursor: pointer;
         }
 
         .form__btn--clicked {
