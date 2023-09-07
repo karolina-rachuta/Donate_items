@@ -1,0 +1,107 @@
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+
+
+  .login__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: $fourth-color;
+
+    h1 {
+      font-size: pxToRem(40);
+      line-height: 1.375;
+      letter-spacing: pxToRem(-0.8);
+    }
+
+    img {
+      max-width: pxToRem(253);
+      width: 100%;
+    }
+
+    .formBtn__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: pxToRem(504);
+      height: pxToRem(325);
+      justify-content: space-between;
+      gap: pxToRem(40);
+
+      .form__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $base-color;
+        //width: pxToRem(385);
+        //height: pxToRem(235);
+        width: 80%;
+        height: 100%;
+        gap: pxToRem(31);
+        padding-top: pxToRem(30);
+        padding-bottom: pxToRem(30);
+
+        .form__box {
+          text-align: left;
+          max-width: pxToRem(250);
+          width: 100%;
+          height: pxToRem(62);
+          border-bottom: pxToRem(0.75) solid $third-color;
+          position: relative;
+
+          label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: pxToRem(16);
+            font-weight: 600;
+          }
+
+          input {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+            font-family: $font-base;
+            background-color: $base-color;
+          }
+        }
+      }
+
+      .btn__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        //@media only screen and (max-width: 550px) {
+        //  flex-direction: column;
+        //  align-items: center;
+        //  justify-content: center;
+        //}
+        button {
+          color: #000;
+          font-size: pxToRem(18);
+          font-family: $font-base;
+          line-height: 1.78;
+          text-align: center;
+          font-weight: 300;
+          border: none;
+          background-color: #ffffff;
+        }
+
+        .form__btn--clicked {
+          width: pxToRem(117);
+          height: pxToRem(50);
+          border: pxToRem(0.75) solid $fourth-color
+        }
+      }
+    }
+  }
+}

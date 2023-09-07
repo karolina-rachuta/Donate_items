@@ -8,17 +8,23 @@ const Login = () => {
             <Navigation/>
             <div className="login__container">
                 <div className="login__box">
-                    <h1>Zaloguj się</h1>
+                    <h1>Login</h1>
                     <img src={decoration} alt="Decoration"/>
-                    <div className="form__container">
-                        <label for="email">Email</label>
-                        <input type="email" id="email"/>
-                        <label for="password">Hasło </label>
-                        <input type="password" id="password"/>
-                    </div>
-                    <div className="btn__container">
-                        <button>Załóż konto</button>
-                        <button>Zaloguj się</button>
+                    <div className="formBtn__container">
+                        <div className="form__container">
+                            <div className="form__box">
+                                <label htmlFor="email">Email </label>
+                                <input type="email" id="email"/>
+                            </div>
+                            <div className="form__box">
+                                <label htmlFor="password">Password </label>
+                                <input type="password" id="password"/>
+                            </div>
+                        </div>
+                        <div className="btn__container">
+                            <button type="submit">Register</button>
+                            <button className="form__btn--clicked" type="submit">Login</button>
+                        </div>
                     </div>
                 </div>
             </div>
