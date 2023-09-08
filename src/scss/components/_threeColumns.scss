@@ -1,6 +1,6 @@
 .container__threeColumns {
   background-color: $secondary-color;
-  height: pxToRem(384);
+  min-height: pxToRem(384);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +8,14 @@
   .container__columns {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     color: $primary-color;
     width: 100%;
+  @media only screen and (min-width: 1050px) {
+    flex-direction: row;
+  }
 
     .box__column {
       display: flex;
@@ -19,6 +23,7 @@
       gap: pxToRem(20);
       width: 100%;
       max-width: pxToRem(334);
+
       .title {
         font-size: pxToRem(90);
         line-height: 1.356;
@@ -37,5 +42,4 @@
       }
     }
   }
-
 }

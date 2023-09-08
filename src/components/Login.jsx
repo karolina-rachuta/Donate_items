@@ -1,14 +1,16 @@
 import Navigation from "./Navigation.jsx";
 import decoration from "../assets/Decoration.svg";
-import React, {useState} from "react";
-import {Link as RouterLink} from "react-router-dom";
-
+import {useState} from "react";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../firebase.js";
 // eslint-disable-next-line react/prop-types
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorEmail, setErrorEmail] = useState("");
     const [errorPassword, setErrorPassword] = useState("");
+    const navigate = useNavigate();
     const handleLoginButton = () => {
         if (!email.includes("@")) {
             setErrorEmail("Email has a wrong format!");
@@ -16,6 +18,14 @@ const Login = () => {
         if (password.length < 6) {
             setErrorPassword("Password is too short!");
         }
+        signInWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                navigate("/");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
     }
 
     return (

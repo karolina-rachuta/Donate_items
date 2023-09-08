@@ -1,7 +1,9 @@
 import Navigation from "./Navigation.jsx";
 import decoration from "../assets/Decoration.svg";
-import React, {useState} from "react";
-import {Link as RouterLink} from "react-router-dom";
+import {useState} from "react";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../firebase.js";
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -10,6 +12,7 @@ const Register = () => {
     const [errorEmail, setErrorEmail] = useState("");
     const [errorPassword, setErrorPassword] = useState("");
     const [errorRepeatedPassword, setErrorRepeatedPassword] = useState("");
+    const navigate = useNavigate();
     const handleRegisterButton = () => {
         if (!email.includes("@")) {
             setErrorEmail("Email has a wrong format!");
@@ -20,6 +23,18 @@ const Register = () => {
         if (password !== repeatedPassword) {
             setErrorRepeatedPassword("Passwords do not match!")
         }
+        createUserWithEmailAndPassword(auth, email, password)
+            // .then((userCredential) => {
+            //     console.log(userCredential)
+            .then(() => {
+                navigate("/");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+            });
+
     }
     return (
         <div className="container">
@@ -51,9 +66,9 @@ const Register = () => {
                         </div>
                         <div className="btn__container">
                             <RouterLink to="/logowanie"><button type="submit">Login</button></RouterLink>
-                            <button className="form__btn--clicked" type="submit"
+                            <RouterLink to="/"><button className="form__btn--clicked" type="submit"
                                     onClick={handleRegisterButton}>Register
-                            </button>
+                            </button></RouterLink>
                         </div>
                     </div>
                 </div>
