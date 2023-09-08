@@ -1,0 +1,79 @@
+.container__giveAway {
+  padding-top: pxToRem(40);
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box__giveAway {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: pxToRem(30);
+    width: 100%;
+    color: $fourth-color;
+
+    p {
+      font-size: pxToRem(38);
+    }
+
+    button {
+      color: #000;
+      font-size: pxToRem(36);
+      font-family: $font-base;
+      line-height: 1.25;
+      text-align: center;
+      font-weight: 300;
+      background-color: #ffffff;
+      width: pxToRem(310);
+      height: pxToRem(120);
+      border: pxToRem(0.75) solid $fourth-color;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-bottom: pxToRem(80);
+      margin-top: pxToRem(20);
+    }
+
+    .box__fourColumns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: $base-color;
+      width: 100%;
+      min-height: pxToRem(325);
+      gap: pxToRem(50);
+      padding-top: pxToRem(50);
+      padding-bottom: pxToRem(50);
+
+      @media only screen and (min-width: 800px) {
+        flex-direction: row;
+      }
+
+      .box__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: pxToRem(150);
+        width: 100%;
+        min-height: pxToRem(172);
+        text-align: center;
+        gap: pxToRem(16);
+
+        span {
+          font-size: pxToRem(18);
+          padding-bottom: pxToRem(16);
+          border-bottom: 1px solid black;
+        }
+
+        p {
+          font-size: pxToRem(16);
+        }
+      }
+    }
+
+  }
+
+}

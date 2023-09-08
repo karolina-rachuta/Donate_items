@@ -13,9 +13,9 @@
     text-align: center;
     color: $primary-color;
     width: 100%;
-  @media only screen and (min-width: 1050px) {
-    flex-direction: row;
-  }
+    @media only screen and (min-width: 1050px) {
+      flex-direction: row;
+    }
 
     .box__column {
       display: flex;
