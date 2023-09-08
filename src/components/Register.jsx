@@ -2,7 +2,7 @@ import Navigation from "./Navigation.jsx";
 import decoration from "../assets/Decoration.svg";
 import {useState} from "react";
 import {Link as RouterLink, useNavigate} from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import {auth} from "../firebase.js";
 
 const Register = () => {
@@ -13,7 +13,9 @@ const Register = () => {
     const [errorPassword, setErrorPassword] = useState("");
     const [errorRepeatedPassword, setErrorRepeatedPassword] = useState("");
     const navigate = useNavigate();
+    const [backendError, setBackendError] = useState("")
     const handleRegisterButton = () => {
+
         if (!email.includes("@")) {
             setErrorEmail("Email has a wrong format!");
         }
@@ -27,11 +29,12 @@ const Register = () => {
             // .then((userCredential) => {
             //     console.log(userCredential)
             .then(() => {
-                navigate("/");
+                signOut(auth);
+                navigate("/logowanie");
             })
             .catch((error) => {
                 const errorCode = error.code;
-                const errorMessage = error.message;
+                setBackendError(error.message);
 
             });
 
@@ -45,6 +48,7 @@ const Register = () => {
                     <img src={decoration} alt="Decoration"/>
                     <div className="formBtn__container formBtn__container--register">
                         <div className="form__container">
+                            {backendError && <p>{backendError}</p>}
                             <div className="form__box form__box-register">
                                 <label htmlFor="email">Email </label>
                                 <input type="email" id="email" value={email}
@@ -66,9 +70,9 @@ const Register = () => {
                         </div>
                         <div className="btn__container">
                             <RouterLink to="/logowanie"><button type="submit">Login</button></RouterLink>
-                            <RouterLink to="/"><button className="form__btn--clicked" type="submit"
+                            <button className="form__btn--clicked" type="submit"
                                     onClick={handleRegisterButton}>Register
-                            </button></RouterLink>
+                            </button>
                         </div>
                     </div>
                 </div>

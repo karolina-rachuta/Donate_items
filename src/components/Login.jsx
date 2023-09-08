@@ -11,6 +11,8 @@ const Login = () => {
     const [errorEmail, setErrorEmail] = useState("");
     const [errorPassword, setErrorPassword] = useState("");
     const navigate = useNavigate();
+    const [backendError, setBackendError] = useState("");
+
     const handleLoginButton = () => {
         if (!email.includes("@")) {
             setErrorEmail("Email has a wrong format!");
@@ -24,7 +26,7 @@ const Login = () => {
             })
             .catch((error) => {
                 const errorCode = error.code;
-                const errorMessage = error.message;
+                setBackendError(error.message);
             });
     }
 
@@ -37,6 +39,7 @@ const Login = () => {
                     <img src={decoration} alt="Decoration"/>
                     <div className="formBtn__container">
                         <div className="form__container">
+                            {backendError && <p>{backendError}</p>}
                             <div className="form__box">
                                 <label htmlFor="email">Email </label>
                                 <input type="email" id="email" value={email}

@@ -7,6 +7,7 @@ import Login from "./components/Login.jsx";
 import "./scss/main.scss";
 import {useState} from "react";
 import {AuthProvider} from "./AuthProvider.jsx";
+import {PrivateRoute} from "./components/PrivateRoute.jsx";
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/oddaj-rzeczy" element={<Oddaj/>}/>
+                <Route path="/oddaj-rzeczy" element={<PrivateRoute>
+                    <Oddaj/>
+                </PrivateRoute>}/>
                 <Route path="/logowanie" element={<Login/>}/>
                 <Route path="/rejestracja" element={<Register/>}/>
                 <Route path="/wylogowano" element={<LogOut/>}/>

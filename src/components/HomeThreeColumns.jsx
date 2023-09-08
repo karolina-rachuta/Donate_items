@@ -1,6 +1,6 @@
 const HomeThreeColumns = () => {
     return (
-        <div className="container container__threeColumns" id="threeColumns">
+        <div className="container container__threeColumns">
             <div className="container__columns">
                 <div className="box__column">
                     <p className="title">10</p>

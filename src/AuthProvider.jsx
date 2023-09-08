@@ -4,7 +4,8 @@ import {onAuthStateChanged} from "firebase/auth";
 import {auth} from "./firebase.js";
 
 const UserContext = createContext(null)
-export const AuthProvider = ({children}) => {
+// eslint-disable-next-line react/prop-types
+export const AuthProvider = ({ children }) => {
     // nie rozumiem propsów children, skąd sa?
     const [user, setUser] = useState(null);
 
@@ -16,7 +17,7 @@ export const AuthProvider = ({children}) => {
                 setUser(null)
             }
         });
-    }, [user])
+    }, [])
     return (
         <UserContext.Provider value={user}>{children}</UserContext.Provider>
     //     UserContext jest kontekstem React, który będzie przechowywać informacje o zalogowanym użytkowniku i udostępniać je innym komponentom.
