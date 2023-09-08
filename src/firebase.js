@@ -7,7 +7,6 @@ import { getAuth } from 'firebase/auth';
 // Your web app's Firebase configuration
 const firebaseConfig = {
     // apiKey: process.env.REACT_APP_API_KEY,
-    // apiKey:"AIzaSyDtGIoMjKOeSeTwM3BLxgZL4aoxz7QhXZ0",
     apiKey: import.meta.env.VITE_API_KEY,
     authDomain: "oddajrzeczy-af47c.firebaseapp.com",
     projectId: "oddajrzeczy-af47c",
