@@ -1,0 +1,42 @@
+.container__aboutUs {
+  display: flex;
+  min-height: pxToRem(835);
+  background-image: url(src/assets/People.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 200px center;
+@media only screen and (min-width: 1000px){
+  background-image: url(src/assets/People.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: pxToRem(500) center;
+}
+  .box__text {
+    width: 50%;
+    background-color: $base-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: pxToRem(30);
+    padding-inline: pxToRem(50);
+    text-align: center;
+    color: $fourth-color;
+
+    span {
+      font-size: pxToRem(38);
+      line-height: 1.45;
+      letter-spacing: pxToRem(-0.76);
+    }
+
+    p {
+      font-size: pxToRem(30);
+      line-height: 1.8;
+      letter-spacing: pxToRem(-0.6);
+    }
+
+    .img__signature {
+      align-self: end;
+    }
+  }
+}

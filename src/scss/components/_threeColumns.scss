@@ -4,7 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding-top: pxToRem(30);
+  padding-bottom: pxToRem(30);
+  
   .container__columns {
     display: flex;
     justify-content: space-evenly;
