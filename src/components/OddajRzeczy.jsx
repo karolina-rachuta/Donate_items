@@ -4,7 +4,10 @@ import icon2 from "../assets/Icon-2.svg";
 import icon3 from "../assets/Icon-3.svg";
 import icon4 from "../assets/Icon-4.svg";
 import {Link as RouterLink} from "react-router-dom";
+import {useUser} from "../AuthProvider.jsx";
+
 const OddajRzeczy = () => {
+    const user = useUser()
     return (
         <div className="container container__giveAway" id="oddajRzeczy">
             <div className="box__giveAway">
@@ -32,9 +35,13 @@ const OddajRzeczy = () => {
                         <p>kurier przyjedzie w dogodnym terminie</p>
                     </div>
                 </div>
-                <RouterLink to="/oddaj-rzeczy"><button>Oddaj <br/>rzeczy</button></RouterLink>
+                {user ? <RouterLink to="/oddaj-rzeczy">
+                        <button>Oddaj <br/>rzeczy</button>
+                    </RouterLink>
+                    : <RouterLink to="/logowanie">
+                        <button>Oddaj <br/>rzeczy</button>
+                    </RouterLink>}
             </div>
-
         </div>
     )
 }
