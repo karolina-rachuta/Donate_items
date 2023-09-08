@@ -35,15 +35,48 @@
   margin-bottom: 1rem;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
 .menu__login {
   a {
     text-decoration: none;
     color: $third-color;
-    font-size: 0.875rem;
+    font-size: pxToRem(13);
     font-family: $font-base;
   }
+
+  .menu__email {
+    color: #000000;
+    font-size: pxToRem(14);
+  }
+
+  .menu__oddaj {
+    color: #000000;
+    font-size: pxToRem(13);
+  }
+
+  .menu__wyloguj {
+    color: $third-color;
+    font-size: pxToRem(12);
+    cursor: pointer;
+  }
+
+  .menu__ramka {
+    border: pxToRem(0.75) solid $secondary-color;
+    padding-top: pxToRem(7);
+    padding-bottom: pxToRem(7);
+    width: pxToRem(90);
+    text-align: center;
+  }
+}
+
+.menu__ramka2 {
+  border: pxToRem(0.75) solid $fourth-color;
+  padding-top: pxToRem(9);
+  padding-bottom: pxToRem(9);
+  width: pxToRem(80);
+  text-align: center;
 }
 
 .menu__home {
@@ -100,6 +133,10 @@
         display: flex;
         justify-content: center;
         flex-direction: row;
+
+        a, button {
+          cursor: pointer;
+        }
       }
 
       a {
