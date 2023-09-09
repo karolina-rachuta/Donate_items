@@ -1,9 +1,12 @@
-import Important from "./Important.jsx";
+
 
 const Page3 = () => {
     return (
         <div>
-            <Important/>
+            <div className="important__container">
+                <span>Important!</span>
+                <p>Provide the address and pickup date and time</p>
+            </div>
         </div>
     )
 }

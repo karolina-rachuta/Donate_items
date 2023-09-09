@@ -1,8 +1,10 @@
-const Important = () => {
+
+
+const ThankYou= () => {
     return (
         <div>
 
         </div>
     )
 }
-export default Important;
+export default ThankYou;

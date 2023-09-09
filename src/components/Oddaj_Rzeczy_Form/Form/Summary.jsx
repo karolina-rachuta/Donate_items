@@ -1,10 +1,6 @@
-
-
 const Summary = () => {
     return (
-        <div>
-
-        </div>
+        <div></div>
     )
 }
 export default Summary;
