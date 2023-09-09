@@ -1,12 +1,15 @@
-import Navigation from "./Navigation.jsx";
+import FormHeader from "./Oddaj_Rzeczy_Form/FormHeader.jsx";
+import Contact from "./Home/Contact.jsx";
+import FormGive from "./Oddaj_Rzeczy_Form/FormGive.jsx";
+
 
 const Oddaj = () => {
     return (
-        <div className="container">
-            <Navigation />
-            <h1>Oddaj</h1>
-
-        </div>
+        <>
+            <FormHeader />
+            <FormGive />
+            <Contact/>
+        </>
     )
 }
 export default Oddaj;

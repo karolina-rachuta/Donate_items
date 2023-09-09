@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "./Navigation.jsx";
+import Navigation from "../Navigation.jsx";
 import Hero from "./Hero.jsx";
 
 const HomeHeader = () => {

@@ -1,5 +1,5 @@
-import decoration from "../assets/Decoration.svg";
-import signature from "../assets/Signature.svg"
+import decoration from "../../assets/Decoration.svg";
+import signature from "../../assets/Signature.svg"
 
 const AboutUs = () => {
     return (

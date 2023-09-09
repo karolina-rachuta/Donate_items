@@ -1,0 +1,95 @@
+.formHeader__container {
+  background-image: url(src/assets/Form-Hero-Image.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: -5rem center;
+  min-height: pxToRem(740);
+  max-height: 100vh;
+  position: relative;
+  @media only screen and (min-width: 1200px) {
+    background-position: 0 top;
+    background-size: 60% auto;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    opacity: 0.5;
+    z-index: 0;
+    @media only screen and (min-width: 1200px) {
+      opacity: 0;
+    }
+  }
+}
+
+.formHero__container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .formHero__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: pxToRem(100);
+    text-align: center;
+    margin-right: pxToRem(55);
+    color: $fourth-color;
+    position: relative;
+    z-index: 1;
+    gap: 1rem;
+
+    .formHero__hdl {
+      font-size: pxToRem(38);
+      text-align: center;
+      line-height: 1.4474;
+      letter-spacing: pxToRem(-0.76);
+      font-weight: 400;
+    }
+
+    .formHero__lead {
+      font-size: pxToRem(40);
+      font-weight: 300;
+      line-height: 1.375;
+    }
+
+    .formHero__rhombus {
+      display: flex;
+      margin-top: pxToRem(50);
+      gap: pxToRem(20);
+      //flex-direction: column;
+      //@media only screen and (min-width: 800px) {
+      //  flex-direction: row;
+      //}
+
+      div {
+        border: pxToRem(0.75) solid #000000;
+        transform: rotate(45deg);
+        width: pxToRem(120);
+        height: pxToRem(120);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: pxToRem(22);
+        //line-height: 1.23 ;
+        @media only screen and (min-width: 800px) {
+          width: pxToRem(190);
+          height: pxToRem(190);
+          border: pxToRem(0.75) solid $third-color;
+        }
+
+        p {
+          transform: rotate(-45deg);
+          line-height: 30px;
+        }
+      }
+
+    }
+  }
+}

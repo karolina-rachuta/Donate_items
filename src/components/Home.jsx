@@ -1,9 +1,9 @@
-import HomeHeader from "./HomeHeader.jsx";
-import HomeThreeColumns from "./HomeThreeColumns.jsx";
-import AboutUs from "./AboutUs.jsx";
-import OddajRzeczy from "./OddajRzeczy.jsx";
-import Organizations from "./Organizations.jsx";
-import Contact from "./Contact.jsx";
+import HomeHeader from "./Home/HomeHeader.jsx";
+import HomeThreeColumns from "./Home/HomeThreeColumns.jsx";
+import AboutUs from "./Home/AboutUs.jsx";
+import OddajRzeczy from "./Home/OddajRzeczy.jsx";
+import Organizations from "./Home/Organizations.jsx";
+import Contact from "./Home/Contact.jsx";
 
 // eslint-disable-next-line react/prop-types
 const Home = () => {

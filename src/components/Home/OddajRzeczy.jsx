@@ -1,15 +1,15 @@
-import decoration from "../assets/Decoration.svg";
-import icon1 from "../assets/Icon-1.svg";
-import icon2 from "../assets/Icon-2.svg";
-import icon3 from "../assets/Icon-3.svg";
-import icon4 from "../assets/Icon-4.svg";
+import decoration from "../../assets/Decoration.svg";
+import icon1 from "../../assets/Icon-1.svg";
+import icon2 from "../../assets/Icon-2.svg";
+import icon3 from "../../assets/Icon-3.svg";
+import icon4 from "../../assets/Icon-4.svg";
 import {Link as RouterLink} from "react-router-dom";
-import {useUser} from "../AuthProvider.jsx";
+import {useUser} from "../../AuthProvider.jsx";
 
 const OddajRzeczy = () => {
     const user = useUser()
     return (
-        <div className="container container__giveAway" id="oddajRzeczy">
+        <div className="container container__giveAway" id="donate">
             <div className="box__giveAway">
                 <p>Wystarczą 4 proste kroki</p>
                 <img src={decoration} alt="Decoration"/>
@@ -36,10 +36,10 @@ const OddajRzeczy = () => {
                     </div>
                 </div>
                 {user ? <RouterLink to="/oddaj-rzeczy">
-                        <button>Oddaj <br/>rzeczy</button>
+                        <button>Give items</button>
                     </RouterLink>
                     : <RouterLink to="/logowanie">
-                        <button>Oddaj <br/>rzeczy</button>
+                        <button>Give Items</button>
                     </RouterLink>}
             </div>
         </div>

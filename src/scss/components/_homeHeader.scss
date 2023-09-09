@@ -3,12 +3,12 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: -20rem center;
-  min-height: 60.1875rem;
+  min-height: pxToRem(930);
   max-height: 100vh;
   position: relative;
   @media only screen and (min-width: 1200px) {
-    background-position: -20rem center;
-    background-size: 70% auto;
+    background-position: -30rem center;
+    background-size: 90% auto;
   }
 
   &::after {
@@ -108,7 +108,7 @@ nav {
     align-items: center;
     margin-top: 12.75rem;
     text-align: center;
-    margin-right: 3.4375rem;
+    margin-right: pxToRem(40);
     color: $fourth-color;
     position: relative;
     z-index: 1;
