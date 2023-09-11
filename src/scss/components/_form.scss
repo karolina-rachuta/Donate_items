@@ -1,3 +1,4 @@
+
 .important__container {
   background-color: $secondary-color;
   width: 100%;
@@ -7,13 +8,157 @@
   text-align: left;
   flex-direction: column;
   gap: pxToRem(30);
-  padding-left: pxToRem(30);
-span {
-  font-size: pxToRem(36);
-  font-weight: 600;
-}
+  padding-inline: pxToRem(30);
+
+  span {
+    font-size: pxToRem(36);
+    font-weight: 600;
+  }
+
   p {
     font-size: pxToRem(22);
     line-height: 1.364;
   }
+}
+
+.form__container--section {
+  padding-left: pxToRem(30);
+  background-image: url(src/assets/Background-Form.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: pxToRem(665);
+  //height: 100%;
+
+  .form__text--step {
+    font-size: pxToRem(24);
+    font-weight: 300;
+    line-height: 1.125;
+    color: $fourth-color;
+    padding-top: pxToRem(35);
+    padding-bottom: pxToRem(70);
+  }
+
+  h2 {
+    font-size: pxToRem(36);
+    font-weight: 600;
+    line-height: 1.25;
+    color: #000000;
+    padding-bottom: pxToRem(44);
+  }
+
+  .radio {
+    padding-bottom: pxToRem(10);
+    display: flex;
+    align-items: center;
+    gap: pxToRem(15)
+  }
+
+  input[type='radio'] {
+    box-sizing: border-box;
+    appearance: none;
+    background: none;
+    //outline: 2px solid #333;
+    border: pxToRem(0.75) solid $fourth-color;
+    width: pxToRem(40);
+    height: pxToRem(40);
+    cursor: pointer;
+  }
+
+  input[type='radio']:checked {
+    background: $secondary-color;
+  }
+
+  label {
+    font-size: pxToRem(24);
+    font-weight: 300;
+    line-height: 1.125;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(10);
+
+    label {
+      font-family: $font-base;
+      font-size: pxToRem(24);
+      font-weight: 300;
+      color: $fourth-color;
+    }
+
+    select {
+      font-family: $font-base;
+      font-weight: 300;
+      font-size: pxToRem(24);
+      background-color: transparent;
+      color: $fourth-color;
+    }
+
+    select option {
+      font-family: $font-base;
+      font-size: pxToRem(24);
+      font-weight: 300;
+      color: red;
+      background-color: transparent;
+    }
+  }
+
+
+  button {
+    color: #000;
+    font-size: pxToRem(18);
+    font-family: $font-base;
+    line-height: 1.78;
+    text-align: center;
+    font-weight: 300;
+    width: pxToRem(117);
+    height: pxToRem(50);
+    border: pxToRem(0.75) solid $fourth-color;
+    cursor: pointer;
+    margin-top: pxToRem(100);
+    margin-bottom: pxToRem(100);
+  }
+}
+
+.btn__box--form {
+  display: flex;
+  gap: pxToRem(50);
+}
+
+.checkbox-container {
+  display: inline-block;
+  border: 2px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  display: none;
+}
+
+input[type="checkbox"]:checked + label{
+  background-color: $secondary-color;
+  border: #FAD648;
+}
+
+.form__container--thankYou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: pxToRem(30);
+  height: 100%;
+  width: 50%;
+  padding-left: pxToRem(40);
+  text-align: center;
+  color: $fourth-color;
+  font-family: $font-base;
+  font-size: pxToRem(40);
+  font-weight: 300;
+  line-height: 1.375;
+  letter-spacing: pxToRem(-0.8);
 }

@@ -7,10 +7,10 @@ import ThankYou from "./Form/ThankYou.jsx";
 
 const FormGive = () => {
     return (
-        <div className="container" style={{height: "500px", backgroundColor: "lightpink"}}>
+        <div className="container">
             <Page1/>
-            {/*<Page2/>*/}
-            {/*<Page3/>*/}
+            <Page2/>
+            <Page3/>
             {/*<Page4/>*/}
             <Summary/>
             <ThankYou />
