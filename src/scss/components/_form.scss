@@ -29,6 +29,9 @@
   background-position: top center;
   height: pxToRem(665);
   //height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .form__text--step {
     font-size: pxToRem(24);
@@ -36,10 +39,10 @@
     line-height: 1.125;
     color: $fourth-color;
     padding-top: pxToRem(35);
-    padding-bottom: pxToRem(70);
+    padding-bottom: pxToRem(40);
   }
 
-  h2 {
+  .step2__hdl {
     font-size: pxToRem(36);
     font-weight: 600;
     line-height: 1.25;
@@ -96,7 +99,7 @@
       background-color: transparent;
       color: $fourth-color;
     }
-
+    //jak ustawic style option styli
     select option {
       font-family: $font-base;
       font-size: pxToRem(24);
@@ -109,17 +112,17 @@
 
   button {
     color: #000;
-    font-size: pxToRem(18);
+    font-size: pxToRem(24);
     font-family: $font-base;
-    line-height: 1.78;
+    line-height: 1.33;
     text-align: center;
     font-weight: 300;
-    width: pxToRem(117);
-    height: pxToRem(50);
+    width: pxToRem(180);
+    height: pxToRem(80);
     border: pxToRem(0.75) solid $fourth-color;
     cursor: pointer;
-    margin-top: pxToRem(100);
-    margin-bottom: pxToRem(100);
+    margin-top: pxToRem(20);
+    margin-bottom: pxToRem(50);
   }
 }
 
@@ -140,7 +143,7 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"]:checked + label{
+input[type="checkbox"]:checked + label {
   background-color: $secondary-color;
   border: #FAD648;
 }
@@ -161,4 +164,46 @@ input[type="checkbox"]:checked + label{
   font-weight: 300;
   line-height: 1.375;
   letter-spacing: pxToRem(-0.8);
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(20);
+
+  .step3__hdl {
+    font-size: pxToRem(36);
+    font-weight: 600;
+    line-height: 1.25;
+    color: #000000;
+  }
+
+  .input__hdl {
+    font-size: pxToRem(24);
+    font-weight: 600;
+    line-height: 1.33;
+    color: #000000;
+    padding-top: pxToRem(50);
+  }
+
+  select {
+    font-family: $font-base;
+    font-weight: 300;
+    font-size: pxToRem(24);
+    background-color: transparent;
+    border: pxToRem(0.75) solid $fourth-color;
+    color: $fourth-color;
+    max-width: pxToRem(300);
+    min-height: pxToRem(49);
+  }
+
+  .input-optional {
+    max-width: pxToRem(570);
+    min-height: pxToRem(40);
+    border: pxToRem(0.75) solid $fourth-color;
+    font-family: $font-base;
+    font-weight: 300;
+    font-size: pxToRem(24);
+    background-color: transparent;
+  }
 }
