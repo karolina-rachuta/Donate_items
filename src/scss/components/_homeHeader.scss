@@ -7,8 +7,8 @@
   max-height: 100vh;
   position: relative;
   @media only screen and (min-width: 1200px) {
-    background-position: -30rem center;
-    background-size: 90% auto;
+    //background-position: 30rem center;
+    background-size: 50% auto;
   }
 
   &::after {
