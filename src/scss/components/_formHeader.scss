@@ -6,7 +6,7 @@
   min-height: pxToRem(740);
   max-height: 100vh;
   position: relative;
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1470px) {
     background-position: 0 top;
     background-size: 60% auto;
   }
@@ -21,7 +21,7 @@
     background: white;
     opacity: 0.5;
     z-index: 0;
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1470px) {
       opacity: 0;
     }
   }
@@ -78,18 +78,21 @@
         align-items: center;
         font-size: pxToRem(22);
         //line-height: 1.23 ;
-        @media only screen and (min-width: 800px) {
+        @media only screen and (min-width: 950px) {
           width: pxToRem(190);
           height: pxToRem(190);
-          border: pxToRem(0.75) solid $third-color;
+          //border: pxToRem(0.75) solid $third-color;
         }
+        //@media only screen and (min-width: 1470px) {
+        //  border: pxToRem(0.75) solid #000000;
+        //}
 
         p {
           transform: rotate(-45deg);
           line-height: 30px;
         }
       }
-
     }
+
   }
 }

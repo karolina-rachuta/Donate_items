@@ -1,7 +1,11 @@
 import tshirt from "./../../../assets/Icon-1.svg"
 import recycle from "./../../../assets/Icon-4.svg"
+import {useContext} from "react";
+import {FormContext} from "../FormGive.jsx";
 
-const Summary = ({numberBags, products, selectLocation, address, city, zipCode, phone, date, time, notes}) => {
+const Summary = () => {
+    const {forms : {numberBags, products, selectLocation, checks, optional, address, city, zipCode, phone, date, time, notes}, set} = useContext(FormContext);
+
     return (
         <div>
             <div className="form__container--section">
@@ -11,11 +15,11 @@ const Summary = ({numberBags, products, selectLocation, address, city, zipCode, 
                             <h3 className="summary__hdl3">Donate:</h3>
                             <div className="summary__box--row">
                                 <img src={tshirt} alt="T-shirt sign"/>
-                                <p> {numberBags} bags, {products} </p>
+                                <p> {numberBags} bags, {products}, {checks} </p>
                             </div>
                             <div className="summary__box--row">
                                 <img src={recycle} alt="Recycle sign"/>
-                                <p> localization: {selectLocation} </p>
+                                <p> localization: {selectLocation} {optional} </p>
                             </div>
                         </div>
                         <div className="summary__box--second">
@@ -35,8 +39,8 @@ const Summary = ({numberBags, products, selectLocation, address, city, zipCode, 
                         </div>
                     </div>
                     <div className="btn__box--form">
-                        <button>Back</button>
-                        <button>Confirm</button>
+                        <button onClick={() => set("step", 3)}>Back</button>
+                        <button onClick={() => set("step", 5)}>Confirm</button>
                 </div>
             </div>
         </div>

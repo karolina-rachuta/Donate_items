@@ -1,10 +1,11 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {FormContext} from "../FormGive.jsx";
 
-const Page1 = ({products, setProducts}) => {
-
+const Page1 = () => {
+    const { forms: {  products }, set } = useContext(FormContext);
 
     const handleSelect = (e) => {
-        setProducts(e.target.value)
+        set("products", e.target.value)
     }
     return (
         <div>
@@ -16,7 +17,7 @@ const Page1 = ({products, setProducts}) => {
                 <div>
                     <p className="form__text--step">Step 1/4</p>
                     <h2 className="step2__hdl">Select what you want to donate</h2>
-                    <form>
+                    <>
                         <div className="radio">
                             <input type="radio" id="option1" value="clothes suitable for reuse" name="products" onClick={handleSelect}
                                    checked={products === "clothes suitable for reuse"}/>
@@ -43,9 +44,9 @@ const Page1 = ({products, setProducts}) => {
                                    checked={products === "other"}/>
                             <label htmlFor="option5"> other</label>
                         </div>
-                    </form>
+                    </>
                 </div>
-                <button>Next</button>
+                <button onClick={() => set("step", 1)}>Next</button>
             </div>
         </div>
     )

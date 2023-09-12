@@ -4,29 +4,71 @@ import Page3 from "./Form/Page3.jsx";
 import Page4 from "./Form/Page4.jsx";
 import Summary from "./Form/Summary.jsx";
 import ThankYou from "./Form/ThankYou.jsx";
-import {useState} from "react";
+import {createContext, useState} from "react";
+
+export const FormContext = createContext(null);
 
 const FormGive = () => {
-    const [products, setProducts] = useState("");
-    const [numberBags, setNumberBags] = useState("");
-    const [selectLocation, setSelectLocation] = useState("");
+    // const [products, setProducts] = useState("");
+    // const [numberBags, setNumberBags] = useState("");
+    // const [selectLocation, setSelectLocation] = useState("");
+    // const [step, setStep] = useState(0)
+    //
+    // const [address, setAddress] = useState("");
+    // const [city, setCity] = useState("");
+    // const [zipCode, setZipCode] = useState("");
+    // const [phone, setPhone] = useState("");
+    // const [date, setDate] = useState("");
+    // const [time, setTime] = useState("");
+    // const [notes, setNotes] = useState("");
 
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [zipCode, setZipCode] = useState("");
-    const [phone, setPhone] = useState("");
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [notes, setNotes] = useState("");
+    const [forms, setForms] = useState({
+        products: "",
+        numberBags: "",
+        selectLocation: "",
+        checks: [],
+        optional: "",
+        step: 0,
+        address: "",
+        city: "",
+        zipCode: "",
+        phone: "",
+        date: "",
+        time: "",
+        notes: ""
+    })
+
+    const setFormValues = (name, value) => {
+        setForms(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const getStep = () => {
+        switch (forms.step) {
+            case 0:
+                return <Page1 />
+            case 1:
+                return <Page2 />
+            case 2:
+                return <Page3 />
+            case 3:
+                return <Page4 />
+            case 4:
+                return  <Summary />
+            case 5:
+                return  <ThankYou />
+        }
+    }
 
     return (
         <div className="container">
-            <Page1 products={products} setProducts={setProducts}/>
-            <Page2 numberBags={numberBags} setNumberBags={setNumberBags}/>
-            <Page3 selectLocation={selectLocation} setSelectLocation={setSelectLocation}/>
-            <Page4 address={address} setAddress={setAddress} city={city} setCity={setCity} zipCode={zipCode} setZipCode={setZipCode} phone={phone} setPhone={setPhone} date={date} setDate={setDate} time={time} setTime={setTime} notes={notes} setNotes={setNotes}/>
-            <Summary products={products} numberBags={numberBags} selectLocation={selectLocation} address={address} city={city} zipCode={zipCode} phone={phone} date={date} time={time} notes={notes}/>
-            <ThankYou />
+            <FormContext.Provider value={{
+                forms, set: setFormValues
+            }}>
+                {getStep()}
+            </FormContext.Provider>
         </div>
     )
 }
