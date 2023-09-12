@@ -15,7 +15,7 @@ const Page1 = () => {
             <div className="form__container--section">
                 <div>
                     <p className="form__text--step">Step 1/4</p>
-                    <h2>Select what you want to donate</h2>
+                    <h2 className="step2__hdl">Select what you want to donate</h2>
                     <form>
                         <div className="radio">
                             <input type="radio" id="option1" value="option1" name="products" onClick={handleSelect}

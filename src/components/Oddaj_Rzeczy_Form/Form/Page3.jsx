@@ -42,9 +42,9 @@ const Page3 = () => {
                                     <label className="checkbox-container" htmlFor="homeless"> homeless</label>
                                     <br/>
                                     <input type="checkbox" id="disabled"/>
-                                    <label className="checkbox-container" htmlFor="disabled"> disabled</label>
+                                    <label className="checkbox-container checkbox-container--botom" htmlFor="disabled"> disabled</label>
                                     <input type="checkbox" id="senior-citizens"/>
-                                    <label className="checkbox-container" htmlFor="senior-citizens"> senior
+                                    <label className="checkbox-container checkbox-container--botom" htmlFor="senior-citizens"> senior
                                         citizens</label>
                                 </div>
                             </div>
