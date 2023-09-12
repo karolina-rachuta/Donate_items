@@ -25,7 +25,7 @@ const FormGive = () => {
             <Page2 numberBags={numberBags} setNumberBags={setNumberBags}/>
             <Page3 selectLocation={selectLocation} setSelectLocation={setSelectLocation}/>
             <Page4 address={address} setAddress={setAddress} city={city} setCity={setCity} zipCode={zipCode} setZipCode={setZipCode} phone={phone} setPhone={setPhone} date={date} setDate={setDate} time={time} setTime={setTime} notes={notes} setNotes={setNotes}/>
-            <Summary products={products} numberBags={numberBags} selectLocation={selectLocation}/>
+            <Summary products={products} numberBags={numberBags} selectLocation={selectLocation} address={address} city={city} zipCode={zipCode} phone={phone} date={date} time={time} notes={notes}/>
             <ThankYou />
         </div>
     )

@@ -23,24 +23,24 @@ const Page1 = ({products, setProducts}) => {
                             <label htmlFor="option1"> clothes suitable for reuse</label>
                         </div>
                         <div className="radio">
-                            <input type="radio" id="option2" value="option2" name="products" onClick={handleSelect}
-                                   checked={products === "option2"}/>
+                            <input type="radio" id="option2" value="clothes to discard" name="products" onClick={handleSelect}
+                                   checked={products === "clothes to discard"}/>
                             <label htmlFor="option2"> clothes to discard</label>
                         </div>
                         <div className="radio">
 
-                            <input type="radio" id="option3" value="option3" name="products" onClick={handleSelect}
-                                   checked={products === "option3"}/>
+                            <input type="radio" id="option3" value="toys" name="products" onClick={handleSelect}
+                                   checked={products === "toys"}/>
                             <label htmlFor="option3"> toys</label>
                         </div>
                         <div className="radio">
-                            <input type="radio" id="option4" value="option4" name="products" onClick={handleSelect}
-                                   checked={products === "option4"}/>
+                            <input type="radio" id="option4" value="books" name="products" onClick={handleSelect}
+                                   checked={products === "books"}/>
                             <label htmlFor="option4"> books</label>
                         </div>
                         <div className="radio">
-                            <input type="radio" id="option5" value="option5" name="products" onClick={handleSelect}
-                                   checked={products === "option5"}/>
+                            <input type="radio" id="option5" value="other" name="products" onClick={handleSelect}
+                                   checked={products === "other"}/>
                             <label htmlFor="option5"> other</label>
                         </div>
                     </form>

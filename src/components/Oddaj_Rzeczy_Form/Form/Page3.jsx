@@ -8,11 +8,17 @@ const Page3 = ({selectLocation, setSelectLocation}) => {
     const [homeless, setHomeless] = useState("");
     const [disabled, setDisabled] = useState("");
     const [seniorCitizens, setSeniorCitizens] = useState("");
+    const [chooseCheckbox, setChooseCheckBox] = useState("");
     const [optional, setOptional] = useState("");
 
     const handleSelectChangeLocation = (e) => {
         setSelectLocation(e.target.value);
     };
+
+    const handleChooseCheckbox = (e) => {
+        setChooseCheckBox(e.target.value);
+    }
+
     return (
         <div>
             <div className="important__container">
@@ -39,7 +45,8 @@ const Page3 = ({selectLocation, setSelectLocation}) => {
                             <div className="input__container">
                                 <h3 className="input__hdl">Whom do you want to help?</h3>
                                 <div>
-                                    <input type="checkbox" id="chldren" value={children} onChange={(e) => setChildren(e.target.value)}/>
+                                    <form>
+                                    <input type="checkbox" id="chldren" value={children} onChange={(e)=>setChildren(e.target.value)}/>
                                     <label className="checkbox-container" htmlFor="children"> children</label>
                                     <input type="checkbox" id="single-mothers" value={singleMothers}
                                            onChange={(e) => setSingleMothers(e.target.value)}/>
@@ -54,6 +61,7 @@ const Page3 = ({selectLocation, setSelectLocation}) => {
                                     <input type="checkbox" id="senior-citizens" value={seniorCitizens} onChange={(e) => setSeniorCitizens(e.target.value)}/>
                                     <label className="checkbox-container checkbox-container--botom"
                                            htmlFor="senior-citizens"> senior citizens</label>
+                                    </form>
                                 </div>
                             </div>
                             <div className="input__container">
