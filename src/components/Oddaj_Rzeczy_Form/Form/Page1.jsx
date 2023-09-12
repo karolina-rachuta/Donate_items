@@ -1,7 +1,7 @@
 import {useState} from "react";
 
-const Page1 = () => {
-    const [products, setProducts] = useState("");
+const Page1 = ({products, setProducts}) => {
+
 
     const handleSelect = (e) => {
         setProducts(e.target.value)
@@ -18,8 +18,8 @@ const Page1 = () => {
                     <h2 className="step2__hdl">Select what you want to donate</h2>
                     <form>
                         <div className="radio">
-                            <input type="radio" id="option1" value="option1" name="products" onClick={handleSelect}
-                                   checked={products === "option1"}/>
+                            <input type="radio" id="option1" value="clothes suitable for reuse" name="products" onClick={handleSelect}
+                                   checked={products === "clothes suitable for reuse"}/>
                             <label htmlFor="option1"> clothes suitable for reuse</label>
                         </div>
                         <div className="radio">

@@ -1,7 +1,7 @@
 import {useState} from "react";
 
-const Page2 = () => {
-    const [numberBags, setNumberBags] = useState("");
+const Page2 = ({numberBags, setNumberBags}) => {
+    // const [numberBags, setNumberBags] = useState("");
 
     const handleSelectNumberOfBags = (e) => {
         setNumberBags(e.target.value);

@@ -1,8 +1,14 @@
 import {useState} from "react";
 
 
-const Page3 = () => {
-    const [selectLocation, setSelectLocation] = useState("");
+const Page3 = ({selectLocation, setSelectLocation}) => {
+    // const [selectLocation, setSelectLocation] = useState("");
+    const [children, setChildren] = useState("");
+    const [singleMothers, setSingleMothers] = useState("");
+    const [homeless, setHomeless] = useState("");
+    const [disabled, setDisabled] = useState("");
+    const [seniorCitizens, setSeniorCitizens] = useState("");
+    const [optional, setOptional] = useState("");
 
     const handleSelectChangeLocation = (e) => {
         setSelectLocation(e.target.value);
@@ -33,25 +39,27 @@ const Page3 = () => {
                             <div className="input__container">
                                 <h3 className="input__hdl">Whom do you want to help?</h3>
                                 <div>
-                                    <input type="checkbox" id="chldren"/>
+                                    <input type="checkbox" id="chldren" value={children} onChange={(e) => setChildren(e.target.value)}/>
                                     <label className="checkbox-container" htmlFor="children"> children</label>
-                                    <input type="checkbox" id="single-mothers"/>
+                                    <input type="checkbox" id="single-mothers" value={singleMothers}
+                                           onChange={(e) => setSingleMothers(e.target.value)}/>
                                     <label className="checkbox-container" htmlFor="single-mothers"> single
                                         mothers</label>
-                                    <input type="checkbox" id="homeless"/>
+                                    <input type="checkbox" id="homeless" value={homeless} onChange={(e) => setHomeless(e.target.value)}/>
                                     <label className="checkbox-container" htmlFor="homeless"> homeless</label>
                                     <br/>
-                                    <input type="checkbox" id="disabled"/>
-                                    <label className="checkbox-container checkbox-container--botom" htmlFor="disabled"> disabled</label>
-                                    <input type="checkbox" id="senior-citizens"/>
-                                    <label className="checkbox-container checkbox-container--botom" htmlFor="senior-citizens"> senior
-                                        citizens</label>
+                                    <input type="checkbox" id="disabled" value={disabled} onChange={(e) => setDisabled(e.target.value)}/>
+                                    <label className="checkbox-container checkbox-container--botom"
+                                           htmlFor="disabled"> disabled</label>
+                                    <input type="checkbox" id="senior-citizens" value={seniorCitizens} onChange={(e) => setSeniorCitizens(e.target.value)}/>
+                                    <label className="checkbox-container checkbox-container--botom"
+                                           htmlFor="senior-citizens"> senior citizens</label>
                                 </div>
                             </div>
                             <div className="input__container">
                                 <label className="input__hdl" htmlFor="input-optional">Enter the name of a specific
                                     organization (optional).</label>
-                                <input className="input-optional" type="text" id="input-optional"/>
+                                <input className="input-optional" type="text" id="input-optional" value={optional} onChange={(e) => setOptional(e.target.value)}/>
                             </div>
                         </div>
                     </form>
