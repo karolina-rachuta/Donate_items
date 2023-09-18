@@ -10,15 +10,31 @@ const Page3 = () => {
     // const [seniorCitizens, setSeniorCitizens] = useState("");
 
 
-    const { forms: {  selectLocation, checks, optional }, set } = useContext(FormContext);
-
+    const {forms: {selectLocation, checks, optional}, set} = useContext(FormContext);
+    const checkList = ["children", "single mothers", "homeless", "disabled", "senior citizens"];
     const handleSelectChangeLocation = (e) => {
         set("selectLocation", e.target.value);
     };
+// Add/Remove checked item from list
+    const handleCheck = (e) => {
+        let updatedList = [...checks];
+        if (e.target.checked) {
+            updatedList = [...checks, e.target.value];
+        } else {
+            updatedList.splice(checks.indexOf(e.target.value), 1);
+        }
+        set("checks", updatedList);
+    };
 
-    // const handleChooseCheckbox = (e) => {
-    //     set("checks", e.target.value);
-    // }
+    // // Generate string of checked items
+    // const checkedItems = checks.length
+    //     ? checks.reduce((total, item) => {
+    //         return total + ", " + item;
+    //     })
+    //     : "";
+
+    // Return classes based on whether item is checked
+    // let isChecked = (item) => checks.include(item) ? "checkbox-container" : "checkbox-container--bottom";
 
     return (
         <div>
@@ -46,8 +62,15 @@ const Page3 = () => {
                             <div className="input__container">
                                 <h3 className="input__hdl">Whom do you want to help?</h3>
                                 <div>
+                                    { checkList.map((item, index) => (
+                                        <div key={index}>
+                                        <input value={item} type="checkbox" onChange={handleCheck} id={item}/>
+                                            <label className="checkbox-container" htmlFor={item}>{item}</label>
+                                        </div>
+
+                                    )) }
                                     {/*<form>*/}
-                                    {/*<input type="checkbox" id="chldren" value={children} onChange={(e)=>setChildren(e.target.value)}/>*/}
+                                    {/*<input type="checkbox" id="children" value={children} onChange={(e)=>setChildren(e.target.value)}/>*/}
                                     {/*<label className="checkbox-container" htmlFor="children"> children</label>*/}
                                     {/*<input type="checkbox" id="single-mothers" value={singleMothers}*/}
                                     {/*       onChange={(e) => setSingleMothers(e.target.value)}/>*/}
@@ -68,7 +91,8 @@ const Page3 = () => {
                             <div className="input__container">
                                 <label className="input__hdl" htmlFor="input-optional">Enter the name of a specific
                                     organization (optional).</label>
-                                {<input className="input-optional" type="text" id="input-optional" value={optional} onChange={(e) => set("optional", e.target.value)}/>}
+                                {<input className="input-optional" type="text" id="input-optional" value={optional}
+                                        onChange={(e) => set("optional", e.target.value)}/>}
                             </div>
                         </div>
                     </form>

@@ -4,8 +4,7 @@ import {useContext} from "react";
 import {FormContext} from "../FormGive.jsx";
 
 const Summary = () => {
-    const {forms : {numberBags, products, selectLocation, checks, optional, address, city, zipCode, phone, date, time, notes}, set} = useContext(FormContext);
-
+    const {forms : {numberBags, products, selectLocation, optional, address, city, zipCode, phone, date, time, notes}, set, checkedItems} = useContext(FormContext);
     return (
         <div>
             <div className="form__container--section">
@@ -15,7 +14,7 @@ const Summary = () => {
                             <h3 className="summary__hdl3">Donate:</h3>
                             <div className="summary__box--row">
                                 <img src={tshirt} alt="T-shirt sign"/>
-                                <p> {numberBags} bags, {products}, {checks} </p>
+                                <p> {numberBags} bags, {products}, {checkedItems} </p>
                             </div>
                             <div className="summary__box--row">
                                 <img src={recycle} alt="Recycle sign"/>

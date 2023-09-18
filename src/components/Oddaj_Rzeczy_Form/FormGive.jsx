@@ -9,18 +9,6 @@ import {createContext, useState} from "react";
 export const FormContext = createContext(null);
 
 const FormGive = () => {
-    // const [products, setProducts] = useState("");
-    // const [numberBags, setNumberBags] = useState("");
-    // const [selectLocation, setSelectLocation] = useState("");
-    // const [step, setStep] = useState(0)
-    //
-    // const [address, setAddress] = useState("");
-    // const [city, setCity] = useState("");
-    // const [zipCode, setZipCode] = useState("");
-    // const [phone, setPhone] = useState("");
-    // const [date, setDate] = useState("");
-    // const [time, setTime] = useState("");
-    // const [notes, setNotes] = useState("");
 
     const [forms, setForms] = useState({
         products: "",
@@ -45,6 +33,13 @@ const FormGive = () => {
         }))
     }
 
+    // Generate string of checked items
+    const checkedItems = forms.checks.length
+        ? forms.checks.reduce((total, item) => {
+            return total + ", " + item;
+        })
+        : "";
+
     const getStep = () => {
         switch (forms.step) {
             case 0:
@@ -65,7 +60,7 @@ const FormGive = () => {
     return (
         <div className="container">
             <FormContext.Provider value={{
-                forms, set: setFormValues
+                forms, set: setFormValues, checkedItems
             }}>
                 {getStep()}
             </FormContext.Provider>
