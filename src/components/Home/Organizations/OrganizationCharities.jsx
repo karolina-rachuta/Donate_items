@@ -43,13 +43,13 @@ const OrganizationCharities = () => {
     ]
 
     const [currentPage, setCurrentPage] = useState(1);
-    // // how many cards on every page
+    // how many cards on every page
     const recordsPerPage = 3;
     const lastIndexOnThePage = currentPage * recordsPerPage;
     const firstIndexOnThePage = lastIndexOnThePage - recordsPerPage;
     const records = organizations.slice(firstIndexOnThePage, lastIndexOnThePage);
     const numberOfPages = Math.ceil(organizations.length / recordsPerPage);
-    // // numbers which we will see on the bottom of the table
+    // numbers which we will see on the bottom of the table
     const numbers = [...Array(numberOfPages + 1).keys()].slice(1);
 
     const nextPage = (e) => {

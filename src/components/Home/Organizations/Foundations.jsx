@@ -54,11 +54,37 @@ const Foundations = () => {
 
     ]
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const recordsPerPage = 3;
+    const lastIndexOnThePage = currentPage * recordsPerPage;
+    const firstIndexOnThePage = lastIndexOnThePage - recordsPerPage;
+    const records = foundation.slice(firstIndexOnThePage, lastIndexOnThePage);
+    const numberOfPagesFoundation = Math.ceil(foundation.length / recordsPerPage);
+    const numbersFoundation = [...Array(numberOfPagesFoundation + 1).keys()].slice(1);
+
+    const nextPage = (e) => {
+        e.preventDefault();
+        if (currentPage !== numberOfPagesFoundation) {
+            setCurrentPage(currentPage + 1);
+        }
+    }
+
+    const prePage = (e) => {
+        e.preventDefault()
+        if (currentPage !== 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+    const changeCurrentPage = (e, id) => {
+        e.preventDefault()
+        setCurrentPage(id);
+    }
 
     return (
         <div>
             <div>
-                {foundation.map((item) => {
+                {records.map((item) => {
                     return (
 
                         <div key={item.id}>
@@ -69,6 +95,17 @@ const Foundations = () => {
                     )
                 })}
             </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onClick={prePage}>Prev</a></li>
+
+                    {numbersFoundation.map((number, index) => (
+                        <li key={index}><a href="#" onClick={(e) => changeCurrentPage(number, e)}>{number}</a></li>
+                    ))}
+
+                    <li><a href="#" onClick={nextPage}>Next</a></li>
+                </ul>
+            </nav>
         </div>
     )
 }

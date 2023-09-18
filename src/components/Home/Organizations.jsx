@@ -2,9 +2,8 @@ import decoration from "../../assets/Decoration.svg"
 import LocalCharities from "./Organizations/LocalCharities.jsx";
 import OrganizationCharities from "./Organizations/OrganizationCharities.jsx";
 import Foundations from "./Organizations/Foundations.jsx";
-import {createContext, useState} from "react";
+import {useState} from "react";
 
-export const PaginationContext = createContext(null);
 const Organizations = () => {
     const [page, setPage] = useState(0);
 
@@ -21,7 +20,7 @@ const Organizations = () => {
 
 
     return (
-        <div className="container" id="organizations" style={{height: "500px", backgroundColor: "lightcoral"}}>
+        <div className="container" id="organizations" style={{height: "500px", backgroundColor: "white"}}>
             <div>
                 <h1>Who do we help?</h1>
                 <img src={decoration} alt="Decoration"/>
