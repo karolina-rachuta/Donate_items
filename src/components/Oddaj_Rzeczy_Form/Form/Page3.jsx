@@ -26,16 +26,6 @@ const Page3 = () => {
         set("checks", updatedList);
     };
 
-    // // Generate string of checked items
-    // const checkedItems = checks.length
-    //     ? checks.reduce((total, item) => {
-    //         return total + ", " + item;
-    //     })
-    //     : "";
-
-    // Return classes based on whether item is checked
-    // let isChecked = (item) => checks.include(item) ? "checkbox-container" : "checkbox-container--bottom";
-
     return (
         <div>
             <div className="important__container">
@@ -61,7 +51,7 @@ const Page3 = () => {
                             </div>
                             <div className="input__container">
                                 <h3 className="input__hdl">Whom do you want to help?</h3>
-                                <div>
+                                <div className="checkbox__container">
                                     { checkList.map((item, index) => (
                                         <div key={index}>
                                         <input value={item} type="checkbox" onChange={handleCheck} id={item}/>
