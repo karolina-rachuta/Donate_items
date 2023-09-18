@@ -1,5 +1,4 @@
 import {useState} from "react";
-import organizationCharities from "./OrganizationCharities.jsx";
 
 const LocalCharities = () => {
     const localCharities = [

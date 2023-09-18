@@ -82,21 +82,21 @@ const Foundations = () => {
     }
 
     return (
-        <div>
+        <div className="container__option">
             <div>
                 {records.map((item) => {
                     return (
 
-                        <div key={item.id}>
+                        <div className="box__map" key={item.id}>
                             <h2>{item.name}</h2>
                             <p>{item.mission}</p>
-                            <p>{item.needs}</p>
+                            <div><p>{item.needs}</p></div>
                         </div>
                     )
                 })}
             </div>
             <nav>
-                <ul>
+                <ul className="box__pages">
                     <li><a href="#" onClick={prePage}>Prev</a></li>
 
                     {numbersFoundation.map((number, index) => (

@@ -20,19 +20,20 @@ const Organizations = () => {
 
 
     return (
-        <div className="container" id="organizations" style={{height: "500px", backgroundColor: "white"}}>
-            <div>
+        <div className="container" id="organizations">
+            <div className="container__pagination">
                 <h1>Who do we help?</h1>
                 <img src={decoration} alt="Decoration"/>
-                <div>
-                    <button onClick={() => setPage(0)}>Foundations</button>
-                    <button onClick={() => setPage(1)}>Organizations</button>
-                    <button onClick={() => setPage(2)}>Local Charities</button>
+                <div className="option__box">
+                    <div onClick={() => setPage(0)}>Foundations</div>
+                    <div onClick={() => setPage(1)}>Organizations</div>
+                    <div onClick={() => setPage(2)}>Local Charities</div>
+                </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus facere fugiat in
                         libero maiores natus obcaecati velit veniam. Aliquam autem dicta eaque eos explicabo inventore
                         perspiciatis ratione, rerum ut.5</p>
-                </div>
-                    {getPage()}
+
+                {getPage()}
             </div>
         </div>
     )

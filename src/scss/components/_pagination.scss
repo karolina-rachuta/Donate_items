@@ -1,0 +1,67 @@
+.container__pagination {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(20);
+  align-items: center;
+
+  img {
+    max-width: pxToRem(300);
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-top: pxToRem(40);
+  }
+
+  .option__box {
+    display: flex;
+    gap: pxToRem(30);
+
+    div {
+      border: pxToRem(0.75) solid $fourth-color;
+      padding: pxToRem(10) pxToRem(50);
+      cursor: pointer;
+
+    }
+  }
+
+  p {
+    text-align: center;
+    width: pxToRem(400);
+  }
+}
+
+.container__option {
+  width: 70%;
+  text-align: left;
+
+  .box__map {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(20);
+    border-bottom: pxToRem(0.75) solid $fourth-color;
+    margin-top: pxToRem(20);
+
+    h2 {
+      font-size: pxToRem(20);
+    }
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      p {
+        margin-bottom: pxToRem(20);
+      }
+    }
+  }
+  .box__pages {
+    display: flex;
+    gap: pxToRem(20);
+    justify-content: center;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
