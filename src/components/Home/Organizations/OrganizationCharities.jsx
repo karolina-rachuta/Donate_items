@@ -50,7 +50,7 @@ const OrganizationCharities = () => {
     const records = organizations.slice(firstIndexOnThePage, lastIndexOnThePage);
     const numberOfPages = Math.ceil(organizations.length / recordsPerPage);
     // numbers which we will see on the bottom of the table
-    const numbers = [...Array(numberOfPages + 1).keys()].slice(1);
+    const numbers = Array.from({length: numberOfPages}).map((_, index) => index + 1);
 
     const nextPage = (e) => {
         e.preventDefault();
@@ -59,16 +59,14 @@ const OrganizationCharities = () => {
         }
     }
 
-    const prePage = (e) => {
-        e.preventDefault()
+    const prePage = () => {
         if (currentPage !== 1) {
             setCurrentPage(currentPage - 1)
         }
     }
 
-    const changeCurrentPage = (e, id) => {
-        e.preventDefault()
-        setCurrentPage(id);
+    const changeCurrentPageOrganization = (page) => {
+        setCurrentPage(page);
     }
 
 
@@ -86,17 +84,15 @@ const OrganizationCharities = () => {
                     )
                 })}
             </div>
-            <nav>
                 <ul>
-                    <li><a href="#" onClick={prePage}>Prev</a></li>
+                    <li onClick={prePage}>Prev</li>
 
                     {numbers.map((number, index) => (
-                        <li key={index}><a href="#" onClick={(e) => changeCurrentPage(number, e)}>{number}</a></li>
+                        <li key={index} onClick={() => changeCurrentPageOrganization(number)}>{number}</li>
                     ))}
 
-                    <li><a href="#" onClick={nextPage}>Next</a></li>
+                    <li onClick={nextPage}>Next</li>
                 </ul>
-            </nav>
         </div>
     )
 }

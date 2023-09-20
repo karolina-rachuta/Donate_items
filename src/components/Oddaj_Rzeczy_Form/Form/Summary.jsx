@@ -2,9 +2,18 @@ import tshirt from "./../../../assets/Icon-1.svg"
 import recycle from "./../../../assets/Icon-4.svg"
 import {useContext} from "react";
 import {FormContext} from "../FormGive.jsx";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from '../../../firebase.js'
+import {useUser} from "../../../AuthProvider.jsx";
 
 const Summary = () => {
-    const {forms : {numberBags, products, selectLocation, optional, address, city, zipCode, phone, date, time, notes}, set, checkedItems} = useContext(FormContext);
+    const {forms , set, checkedItems} = useContext(FormContext);
+    const user = useUser()
+    const {numberBags, products, selectLocation, optional, address, city, zipCode, phone, date, time, notes} = forms
+    const confirm = async () => {
+        await setDoc(doc(db, "form", new Date().toISOString()), {...forms, user: user.uid});
+        await set("step", 5)
+    }
     return (
         <div>
             <div className="form__container--section">
@@ -39,7 +48,7 @@ const Summary = () => {
                     </div>
                     <div className="btn__box--form">
                         <button onClick={() => set("step", 3)}>Back</button>
-                        <button onClick={() => set("step", 5)}>Confirm</button>
+                        <button onClick={() => confirm()}>Confirm</button>
                 </div>
             </div>
         </div>

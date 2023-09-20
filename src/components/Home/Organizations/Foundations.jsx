@@ -56,11 +56,13 @@ const Foundations = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const recordsPerPage = 3;
-    const lastIndexOnThePage = currentPage * recordsPerPage;
-    const firstIndexOnThePage = lastIndexOnThePage - recordsPerPage;
+
+    const firstIndexOnThePage = (currentPage - 1) * recordsPerPage;
+    const lastIndexOnThePage = firstIndexOnThePage + recordsPerPage;
+
     const records = foundation.slice(firstIndexOnThePage, lastIndexOnThePage);
     const numberOfPagesFoundation = Math.ceil(foundation.length / recordsPerPage);
-    const numbersFoundation = [...Array(numberOfPagesFoundation + 1).keys()].slice(1);
+    const numbersFoundation = Array.from({length: numberOfPagesFoundation}).map((_, index) => index + 1);
 
     const nextPage = (e) => {
         e.preventDefault();
@@ -76,9 +78,8 @@ const Foundations = () => {
         }
     }
 
-    const changeCurrentPage = (e, id) => {
-        e.preventDefault()
-        setCurrentPage(id);
+    const changeCurrentPage = (page) => {
+        setCurrentPage(page);
     }
 
     return (
@@ -86,7 +87,6 @@ const Foundations = () => {
             <div>
                 {records.map((item) => {
                     return (
-
                         <div className="box__map" key={item.id}>
                             <h2>{item.name}</h2>
                             <p>{item.mission}</p>
@@ -95,17 +95,14 @@ const Foundations = () => {
                     )
                 })}
             </div>
-            <nav>
-                <ul className="box__pages">
-                    <li><a href="#" onClick={prePage}>Prev</a></li>
 
-                    {numbersFoundation.map((number, index) => (
-                        <li key={index}><a href="#" onClick={(e) => changeCurrentPage(number, e)}>{number}</a></li>
-                    ))}
-
-                    <li><a href="#" onClick={nextPage}>Next</a></li>
-                </ul>
-            </nav>
+            <ul className="box__pages">
+                <li onClick={prePage}>Prev</li>
+                {numbersFoundation.map((number, index) => (
+                    <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>
+                ))}
+                <li onClick={nextPage}>Next</li>
+            </ul>
         </div>
     )
 }

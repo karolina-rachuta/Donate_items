@@ -33,12 +33,12 @@ const LocalCharities = () => {
     const lastIndexOnThePage = currentPage * recordsPerPage;
     const firstIndexOnThePage = lastIndexOnThePage - recordsPerPage;
     const records = localCharities.slice(firstIndexOnThePage, lastIndexOnThePage);
-    const numberOfPageLocalCharities = Math.ceil(localCharities.length / recordsPerPage);
-    const numbers = [...Array(numberOfPageLocalCharities + 1).keys()].slice(1);
+    const numberOfPagesLocalCharities = Math.ceil(localCharities.length / recordsPerPage);
+    const numbers = Array.from({length: numberOfPagesLocalCharities}).map((_, index) => index + 1);
 
     const nextPage = (e) => {
         e.preventDefault();
-        if (currentPage !== numberOfPageLocalCharities) {
+        if (currentPage !== numberOfPagesLocalCharities) {
             setCurrentPage(currentPage + 1);
         }
     }
@@ -50,9 +50,8 @@ const LocalCharities = () => {
         }
     }
 
-    const changeCurrentPage = (e, id) => {
-        e.preventDefault()
-        setCurrentPage(id);
+    const changeCurrentPage = (page) => {
+        setCurrentPage(page);
     }
 
     return (
@@ -69,17 +68,17 @@ const LocalCharities = () => {
                     )
                 })}
             </div>
-            <nav>
+
                 <ul>
-                    <li><a href="#" onClick={prePage}>Prev</a></li>
+                    <li onClick={prePage}>Prev</li>
 
                     {numbers.map((number, index) => (
-                        <li key={index}><a href="#" onClick={(e) => changeCurrentPage(number, e)}>{number}</a></li>
+                        <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>
                     ))}
 
-                    <li><a href="#" onClick={nextPage}>Next</a></li>
+                    <li onClick={nextPage}>Next</li>
                 </ul>
-            </nav>
+
         </div>
     )
 }
