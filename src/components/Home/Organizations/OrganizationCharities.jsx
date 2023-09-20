@@ -71,28 +71,31 @@ const OrganizationCharities = () => {
 
 
     return (
-        <div>
+        <div className="container__option">
             <div>
                 {records.map((item) => {
                     return (
-
-                        <div key={item.id}>
-                            <h2>{item.name}</h2>
-                            <p>{item.mission}</p>
-                            <p>{item.needs}</p>
+                        <div className="box__map" key={item.id}>
+                            <div className="box__map1"><h2>{item.name}</h2>
+                                <p>{item.mission}</p>
+                            </div>
+                            <div className="box__map1">
+                                <p>{item.needs}</p>
+                            </div>
                         </div>
                     )
                 })}
             </div>
-                <ul>
-                    <li onClick={prePage}>Prev</li>
+            <ul className="box__pages">
+                <li onClick={prePage}>Prev</li>
 
-                    {numbers.map((number, index) => (
-                        <li key={index} onClick={() => changeCurrentPageOrganization(number)}>{number}</li>
-                    ))}
+                {numbers.map((number, index) => (
+                    <li key={index} onClick={() => changeCurrentPageOrganization(number)}
+                        className={number === currentPage ? 'active' : undefined}>{number}</li>
+                ))}
 
-                    <li onClick={nextPage}>Next</li>
-                </ul>
+                <li onClick={nextPage}>Next</li>
+            </ul>
         </div>
     )
 }

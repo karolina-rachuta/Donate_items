@@ -30,48 +30,50 @@ const LocalCharities = () => {
     const numberOfPagesLocalCharities = Math.ceil(localCharities.length / recordsPerPage);
     const numbers = Array.from({length: numberOfPagesLocalCharities}).map((_, index) => index + 1);
 
-    const nextPage = (e) => {
-        e.preventDefault();
-        if (currentPage !== numberOfPagesLocalCharities) {
-            setCurrentPage(currentPage + 1);
-        }
-    }
+    // const nextPage = (e) => {
+    //     e.preventDefault();
+    //     if (currentPage !== numberOfPagesLocalCharities) {
+    //         setCurrentPage(currentPage + 1);
+    //     }
+    // }
 
-    const prePage = (e) => {
-        e.preventDefault()
-        if (currentPage !== 1) {
-            setCurrentPage(currentPage - 1)
-        }
-    }
+    // const prePage = (e) => {
+    //     e.preventDefault()
+    //     if (currentPage !== 1) {
+    //         setCurrentPage(currentPage - 1)
+    //     }
+    // }
 
-    const changeCurrentPage = (page) => {
-        setCurrentPage(page);
-    }
+    // const changeCurrentPage = (page) => {
+    //     setCurrentPage(page);
+    // }
 
     return (
-        <div>
+        <div className="container__option">
             <div>
                 {records.map((item) => {
                     return (
-
-                        <div key={item.id}>
-                            <h2>{item.name}</h2>
-                            <p>{item.mission}</p>
-                            <p>{item.needs}</p>
+                        <div className="box__map" key={item.id}>
+                            <div className="box__map1"><h2>{item.name}</h2>
+                                <p>{item.mission}</p>
+                            </div>
+                            <div className="box__map1">
+                                <p>{item.needs}</p>
+                            </div>
                         </div>
                     )
                 })}
             </div>
 
-                {/*<ul>*/}
-                {/*    <li onClick={prePage}>Prev</li>*/}
+            {/*<ul className="box__pages">*/}
+            {/*    <li onClick={prePage}>Prev</li>*/}
 
-                {/*    {numbers.map((number, index) => (*/}
-                {/*        <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>*/}
-                {/*    ))}*/}
+            {/*    {numbers.map((number, index) => (*/}
+            {/*        <li key={index} onClick={() => changeCurrentPage(number)} className={number === currentPage ? 'active' : undefined}>{number}>{number}</li>*/}
+            {/*    ))}*/}
 
-                {/*    <li onClick={nextPage}>Next</li>*/}
-                {/*</ul>*/}
+            {/*    <li onClick={nextPage}>Next</li>*/}
+            {/*</ul>*/}
 
         </div>
     )
