@@ -11,28 +11,28 @@ const OddajRzeczy = () => {
     return (
         <div className="container container__giveAway" id="donate">
             <div className="box__giveAway">
-                <p>Wystarczą 4 proste kroki</p>
+                <p>It takes just 4 simple steps:</p>
                 <img src={decoration} alt="Decoration"/>
                 <div className="box__fourColumns">
                     <div className="box__column">
                         <img src={icon1} alt="Icon1"/>
-                        <span>Wybierz rzeczy</span>
-                        <p>ubrania, zabawki, sprzęt i inne</p>
+                        <span>Choose items</span>
+                        <p>clothes, toys, agd and others</p>
                     </div>
                     <div className="box__column">
                         <img src={icon2} alt="Icon2"/>
-                        <span>Spakuj je</span>
-                        <p>skorzystaj z worków na śmieci</p>
+                        <span>Pack it</span>
+                        <p>use trash bags</p>
                     </div>
                     <div className="box__column">
                         <img src={icon3} alt="Icon3"/>
-                        <span>Zdecyduj komu chcesz pomóc</span>
-                        <p>wybierz zaufane miejsce</p>
+                        <span>Decide whom you want to help</span>
+                        <p>choose trusted organization</p>
                     </div>
                     <div className="box__column">
                         <img src={icon4} alt="Icon4"/>
-                        <span>Zamów kuriera</span>
-                        <p>kurier przyjedzie w dogodnym terminie</p>
+                        <span>Order the delivery</span>
+                        <p>courier will pick up your donation</p>
                     </div>
                 </div>
                 {user ? <RouterLink to="/oddaj-rzeczy">

@@ -22,7 +22,7 @@ const Organizations = () => {
     return (
         <div className="container" id="organizations">
             <div className="container__pagination">
-                <h1>Who do we help?</h1>
+                <h1>Whom do we help?</h1>
                 <img src={decoration} alt="Decoration"/>
                 <div className="option__box">
                     <div onClick={() => setPage(0)} className={page === 0 ? 'active' : undefined}>Foundations</div>
