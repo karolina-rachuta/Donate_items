@@ -20,12 +20,6 @@ const LocalCharities = () => {
             mission: "Assisting individuals facing difficult life situations.",
             needs: "clothing, food, home appliances, furniture, toys"
         },
-        {
-            id: 4,
-            name: "Lorem Ipsum4",
-            mission: "Assisting individuals facing difficult life situations.",
-            needs: "clothing, food, home appliances, furniture, toys"
-        },
     ]
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -69,15 +63,15 @@ const LocalCharities = () => {
                 })}
             </div>
 
-                <ul>
-                    <li onClick={prePage}>Prev</li>
+                {/*<ul>*/}
+                {/*    <li onClick={prePage}>Prev</li>*/}
 
-                    {numbers.map((number, index) => (
-                        <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>
-                    ))}
+                {/*    {numbers.map((number, index) => (*/}
+                {/*        <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>*/}
+                {/*    ))}*/}
 
-                    <li onClick={nextPage}>Next</li>
-                </ul>
+                {/*    <li onClick={nextPage}>Next</li>*/}
+                {/*</ul>*/}
 
         </div>
     )

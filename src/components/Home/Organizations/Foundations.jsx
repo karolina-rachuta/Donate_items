@@ -88,9 +88,11 @@ const Foundations = () => {
                 {records.map((item) => {
                     return (
                         <div className="box__map" key={item.id}>
-                            <h2>{item.name}</h2>
-                            <p>{item.mission}</p>
-                            <div><p>{item.needs}</p></div>
+                            <div className="box__map1">
+                                <h2>{item.name}</h2>
+                                <p>{item.mission}</p>
+                            </div>
+                            <div className="box__map1"><p>{item.needs}</p></div>
                         </div>
                     )
                 })}
@@ -99,7 +101,8 @@ const Foundations = () => {
             <ul className="box__pages">
                 <li onClick={prePage}>Prev</li>
                 {numbersFoundation.map((number, index) => (
-                    <li key={index} onClick={() => changeCurrentPage(number)}>{number}</li>
+                    <li key={index} onClick={() => changeCurrentPage(number)}
+                        className={number === currentPage ? 'active' : undefined}>{number}</li>
                 ))}
                 <li onClick={nextPage}>Next</li>
             </ul>

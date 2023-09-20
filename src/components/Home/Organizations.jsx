@@ -25,9 +25,9 @@ const Organizations = () => {
                 <h1>Who do we help?</h1>
                 <img src={decoration} alt="Decoration"/>
                 <div className="option__box">
-                    <div onClick={() => setPage(0)}>Foundations</div>
-                    <div onClick={() => setPage(1)}>Organizations</div>
-                    <div onClick={() => setPage(2)}>Local Charities</div>
+                    <div onClick={() => setPage(0)} className={page === 0 ? 'active' : undefined}>Foundations</div>
+                    <div onClick={() => setPage(1)} className={page === 1 ? 'active' : undefined}>Organizations</div>
+                    <div onClick={() => setPage(2)} className={page === 2 ? 'active' : undefined}>Local Charities</div>
                 </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus facere fugiat in
                         libero maiores natus obcaecati velit veniam. Aliquam autem dicta eaque eos explicabo inventore
