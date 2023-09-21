@@ -2,11 +2,15 @@
   min-height: pxToRem(700);
   background-image: url(src/assets/Background-Contact-Form.jpg);
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
+  @media only screen and (min-width: 1115px) {
+    background-size: 100% auto;
+    justify-content: end;
+  }
 
   &::after {
     content: "";

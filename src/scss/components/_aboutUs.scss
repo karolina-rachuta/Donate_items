@@ -1,19 +1,38 @@
 .container__aboutUs {
   display: flex;
   min-height: pxToRem(835);
-  background-image: url(src/assets/People.jpg);
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: 200px center;
-@media only screen and (min-width: 1000px){
-  background-image: url(src/assets/People.jpg);
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: pxToRem(500) center;
-}
+  //background-image: url(src/assets/People.jpg);
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //background-position: 200px center;
+  @media only screen and (min-width: 1000px) {
+    background-image: url(src/assets/People.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: pxToRem(500) center;
+  }
+
   .box__text {
-    width: 50%;
-    background-color: $base-color;
+    width: 100%;
+    background-image: url(src/assets/People.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      opacity: 0.5;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      z-index: 0;
+    }
+
+    //background-position: 200px center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,20 +42,37 @@
     text-align: center;
     color: $fourth-color;
 
+    @media only screen and (min-width: 1025px) {
+      width: 50%;
+      background-color: $base-color;
+      background-image: url(none);
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+    }
+
     span {
       font-size: pxToRem(38);
       line-height: 1.45;
       letter-spacing: pxToRem(-0.76);
+      position: relative;
+      z-index: 1;
     }
 
     p {
       font-size: pxToRem(30);
       line-height: 1.8;
       letter-spacing: pxToRem(-0.6);
+      position: relative;
+      z-index: 1;
     }
 
     .img__signature {
       align-self: end;
+      position: relative;
+      z-index: 1;
     }
   }
 }
