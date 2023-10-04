@@ -16,6 +16,7 @@
 
 
 ## Acknowledgments:
+- Coders Lab- IT School
 - Firebase
 - Google Fonts
 
