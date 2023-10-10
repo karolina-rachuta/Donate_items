@@ -1,7 +1,7 @@
 # Donate Items (Oddaj rzeczy)
 
 ## Author:
-karolina-rachuta](https://github.com/karolina-rachuta)
+[karolina-rachuta](https://github.com/karolina-rachuta)
 
 ## Live Demo:
 
@@ -16,6 +16,7 @@ karolina-rachuta](https://github.com/karolina-rachuta)
 
 
 ## Acknowledgments:
+- Coders Lab- IT School
 - Firebase
 - Google Fonts
 

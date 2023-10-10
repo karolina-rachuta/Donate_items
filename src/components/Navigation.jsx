@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link as RouterLink, useLocation, useNavigate} from "react-router-dom";
 import {Link as ScrollLink} from "react-scroll";
 import {useUser} from "../AuthProvider.jsx";
