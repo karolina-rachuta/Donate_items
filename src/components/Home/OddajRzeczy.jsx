@@ -35,10 +35,10 @@ const OddajRzeczy = () => {
                         <p>courier will pick up your donation</p>
                     </div>
                 </div>
-                {user ? <RouterLink to="/oddaj-rzeczy">
+                {user ? <RouterLink to="/donate">
                         <button>Give items</button>
                     </RouterLink>
-                    : <RouterLink to="/logowanie">
+                    : <RouterLink to="/login">
                         <button>Give Items</button>
                     </RouterLink>}
             </div>

@@ -34,6 +34,11 @@
       text-transform: uppercase;
       margin-bottom: pxToRem(80);
       margin-top: pxToRem(20);
+
+      &:hover {
+        scale: 1.1;
+        color: black;
+      }
     }
 
     .box__fourColumns {
