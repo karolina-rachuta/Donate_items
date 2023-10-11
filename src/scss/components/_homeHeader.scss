@@ -1,12 +1,15 @@
 .header__container {
-  background-image: url(../../../src/assets/Home-Hero-Image.jpg);
+  background-image: url(assets/Home-Hero-Image.jpg);
   background-size: 200% auto;
   background-repeat: no-repeat;
   background-position: center 20rem;
   min-height: pxToRem(930);
   max-height: 100vh;
   position: relative;
-
+  @media only screen and (min-width: 558px) {
+    background-position: -20rem center;
+    background-size: 100% auto;
+  }
   @media only screen and (min-width: 1200px) {
     background-position: -20rem center;
     background-size: 70% auto;

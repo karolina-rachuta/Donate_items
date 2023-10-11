@@ -4,8 +4,9 @@
 [karolina-rachuta](https://github.com/karolina-rachuta)
 
 ## Live Demo:
-
+https://donateitems.netlify.app/
 ## About the project:
+
 
 ## Built with:
 - React js
