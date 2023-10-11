@@ -41,12 +41,16 @@
         background-color: $base-color;
         //width: pxToRem(385);
         //height: pxToRem(235);
-        width: 80%;
+        //width: 80%;
         height: 100%;
         gap: pxToRem(31);
         padding-top: pxToRem(30);
         padding-bottom: pxToRem(30);
-
+        width: 100vw;
+        padding-inline: pxToRem(20);
+        @media only screen and (min-width: 558px) {
+          width: 80%;
+        }
         .error-message {
           color: red;
           font-size: pxToRem(14);
@@ -81,6 +85,7 @@
             background-color: $base-color;
             //border-bottom: pxToRem(0.75) solid $third-color;
           }
+
           .error-input {
             border-bottom: 1px solid red;
           }
@@ -94,12 +99,13 @@
       .btn__container {
         display: flex;
         justify-content: space-between;
-        width: 100%;
-        //@media only screen and (max-width: 550px) {
-        //  flex-direction: column;
-        //  align-items: center;
-        //  justify-content: center;
-        //}
+        align-items: center;
+        width: 100vw;
+        padding-inline: pxToRem(20);
+        @media only screen and (min-width: 558px) {
+          width: 100%;
+        }
+
         button {
           color: #000;
           font-size: pxToRem(18);
@@ -110,10 +116,11 @@
           border: none;
           background-color: #ffffff;
           cursor: pointer;
-        &:hover {
-          scale: 1.1;
-          color: black;
-        }
+
+          &:hover {
+            scale: 1.1;
+            color: black;
+          }
         }
 
         .form__btn--clicked {
