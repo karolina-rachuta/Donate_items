@@ -1,11 +1,12 @@
 .header__container {
   background-image: url(src/assets/Home-Hero-Image.jpg);
-  background-size: 100% auto;
+  background-size: 200% auto;
   background-repeat: no-repeat;
-  background-position: -20rem center;
+  background-position: center 20rem;
   min-height: pxToRem(930);
   max-height: 100vh;
   position: relative;
+
   @media only screen and (min-width: 1200px) {
     background-position: -20rem center;
     background-size: 70% auto;
@@ -36,18 +37,10 @@ nav {
   display: flex;
   list-style: none;
   justify-content: end;
-  gap: 1.5rem;
   margin-bottom: 1rem;
   position: relative;
   z-index: 1;
   align-items: center;
-
-  //li {
-  //  &:hover {
-  //    scale: 1.1;
-  //    color: black;
-  //  }
-  //}
 }
 
 .menu__login {
@@ -104,6 +97,30 @@ nav {
     width: pxToRem(90);
     text-align: center;
   }
+
+  .hamburger {
+    //position: absolute;
+    //top: pxToRem(10);
+    //right: pxToRem(8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+    cursor: pointer;
+    @media only screen and (min-width: 558px) {
+      display: none;
+    }
+
+    span {
+      height: 0.4rem;
+      width: 100%;
+      background-color: $fourth-color;
+      border-radius: 0.2rem;
+      z-index: 1;
+    }
+  }
+
 }
 
 .menu__ramka2 {
@@ -122,24 +139,57 @@ nav {
   text-align: center;
 }
 
+
 .menu__home {
+  gap: 1.5rem;
   font-size: 1.125rem;
   color: $fourth-color;
   font-family: $font-base;
   cursor: pointer;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  &.open {
+    display: flex;
+  }
+  @media only screen and (min-width: 585px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+
+
+  ul {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
 
   a {
     text-decoration: none;
     font-size: 1.125rem;
     color: $fourth-color;
     font-family: $font-base;
+    text-align: center;
+    //margin: 0.2rem 0.5rem;
 
+    //@media only screen and (min-width: 558px){
+    //  margin: 0;
+    //}
     &:hover {
       color: black;
     }
   }
 
   li {
+    text-align: center;
+    @media only screen and (min-width: 558px) {
+
+    }
+
     &:hover {
       scale: 1.1;
     }
