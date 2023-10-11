@@ -6,7 +6,7 @@
   //background-size: cover;
   //background-position: 200px center;
   @media only screen and (min-width: 1000px) {
-    background-image: url(src/assets/People.jpg);
+    background-image: url(.././assets/People.jpg);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: pxToRem(500) center;
@@ -14,7 +14,7 @@
 
   .box__text {
     width: 100%;
-    background-image: url(src/assets/People.jpg);
+    background-image: url(.././assets/People.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     position: relative;
