@@ -37,7 +37,6 @@ nav {
   display: flex;
   list-style: none;
   justify-content: end;
-  gap: 1.5rem;
   margin-bottom: 1rem;
   position: relative;
   z-index: 1;
@@ -142,6 +141,7 @@ nav {
 
 
 .menu__home {
+  gap: 1.5rem;
   font-size: 1.125rem;
   color: $fourth-color;
   font-family: $font-base;
