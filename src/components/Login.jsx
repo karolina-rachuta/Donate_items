@@ -56,7 +56,7 @@ const Login = () => {
                             {errorPassword && <p className="error-message">{errorPassword}</p>}
                         </div>
                         <div className="btn__container">
-                            <RouterLink to="/rejestracja"><button type="submit">Register</button></RouterLink>
+                            <RouterLink to="/register"><button type="submit">Register</button></RouterLink>
                             <button className="form__btn--clicked" type="submit" onClick={handleLoginButton}>Login
                             </button>
                         </div>

@@ -30,7 +30,7 @@ const Register = () => {
             //     console.log(userCredential)
             .then(() => {
                 signOut(auth);
-                navigate("/logowanie");
+                navigate("/login");
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -69,7 +69,7 @@ const Register = () => {
                             {errorRepeatedPassword && <p className="error-message">{errorRepeatedPassword}</p>}
                         </div>
                         <div className="btn__container">
-                            <RouterLink to="/logowanie"><button type="submit">Login</button></RouterLink>
+                            <RouterLink to="/login"><button type="submit">Login</button></RouterLink>
                             <button className="form__btn--clicked" type="submit"
                                     onClick={handleRegisterButton}>Register
                             </button>

@@ -11,16 +11,16 @@ const Hero = () => {
                     Put unwanted things in trusted hands</p>
                 <img src={decoration} alt="Decoration"/>
                 <div className="hero__btn">
-                    {user ? <RouterLink to="/oddaj-rzeczy">
+                    {user ? <RouterLink to="/donate">
                             <button>Give <br/> Items</button>
                         </RouterLink>
-                        : <RouterLink to="/logowanie">
+                        : <RouterLink to="/login">
                             <button>Give <br/> Items</button>
                         </RouterLink>}
-                    {user ? <RouterLink to="/oddaj-rzeczy">
+                    {user ? <RouterLink to="/donate">
                             <button>Organize <br/> Collection</button>
                         </RouterLink>
-                        : <RouterLink to="/logowanie">
+                        : <RouterLink to="/login">
                             <button>Organize <br/> Collection</button>
                         </RouterLink>}
                 </div>

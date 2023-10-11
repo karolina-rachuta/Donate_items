@@ -13,25 +13,30 @@ const Navigation = () => {
 
     const handleLogOut = () => {
         signOut(auth).then(() => {
-            navigate("/wylogowano");
+            navigate("/logout");
         }).catch((error) => {
             // An error happened.
         });
     }
     const isHomePage = location.pathname === '/';
+    const isLoginPage = location.pathname === '/login';
+    const isRegisterPage = location.pathname === '/register';
+
     return (
         <nav>
             <ul className="menu menu__login">
                 {user ? (
                     <>
                         <li className="menu__email">Hello {user.email}!</li>
-                        <li className="menu__oddaj menu__ramka"><RouterLink to="/oddaj-rzeczy">Give Items</RouterLink></li>
+                        <li className="menu__oddaj menu__ramka"><RouterLink to="/donate">Give Items</RouterLink></li>
                         <li className="menu__wyloguj" onClick={handleLogOut}>Log out</li>
                     </>
                 ) : (
                     <>
-                        <li><RouterLink to="/logowanie">Login</RouterLink></li>
-                        <li className="menu__ramka"><RouterLink to="/rejestracja">Register</RouterLink></li>
+                        <li className={isLoginPage ? "menu__ramka" : "menu__ramka1"}><RouterLink to="/login">Login</RouterLink>
+                        </li>
+                        <li className={isRegisterPage ? "menu__ramka" : "menu__ramka1"}><RouterLink
+                            to="/register">Register</RouterLink></li>
                     </>
                 )}
             </ul>

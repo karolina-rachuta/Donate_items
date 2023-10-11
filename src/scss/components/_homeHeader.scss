@@ -26,10 +26,12 @@
     }
   }
 }
+
 nav {
   padding-top: 1rem;
   padding-inline: 2rem;
 }
+
 .menu {
   display: flex;
   list-style: none;
@@ -39,6 +41,13 @@ nav {
   position: relative;
   z-index: 1;
   align-items: center;
+
+  //li {
+  //  &:hover {
+  //    scale: 1.1;
+  //    color: black;
+  //  }
+  //}
 }
 
 .menu__login {
@@ -47,6 +56,11 @@ nav {
     color: $third-color;
     font-size: pxToRem(13);
     font-family: $font-base;
+
+    &:hover {
+      color: black;
+      scale: 1.1;
+    }
   }
 
   .menu__email {
@@ -57,16 +71,34 @@ nav {
   .menu__oddaj {
     color: #000000;
     font-size: pxToRem(13);
+
+    &:hover {
+      scale: 1.1;
+      color: black;
+    }
   }
 
   .menu__wyloguj {
     color: $third-color;
     font-size: pxToRem(12);
     cursor: pointer;
+
+    &:hover {
+      scale: 1.1;
+      color: black;
+    }
   }
 
   .menu__ramka {
     border: pxToRem(0.75) solid $secondary-color;
+    padding-top: pxToRem(7);
+    padding-bottom: pxToRem(7);
+    width: pxToRem(90);
+    text-align: center;
+  }
+
+  .menu__ramka1 {
+    border: pxToRem(0.75) solid transparent;
     padding-top: pxToRem(7);
     padding-bottom: pxToRem(7);
     width: pxToRem(90);
@@ -89,6 +121,7 @@ nav {
   width: pxToRem(80);
   text-align: center;
 }
+
 .menu__home {
   font-size: 1.125rem;
   color: $fourth-color;
@@ -100,6 +133,16 @@ nav {
     font-size: 1.125rem;
     color: $fourth-color;
     font-family: $font-base;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  li {
+    &:hover {
+      scale: 1.1;
+    }
   }
 }
 
@@ -146,6 +189,12 @@ nav {
 
         a, button {
           cursor: pointer;
+        }
+        a {
+          &:hover {
+            scale: 1.1;
+            color: black;
+          }
         }
       }
 

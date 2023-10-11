@@ -17,12 +17,12 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/oddaj-rzeczy" element={<PrivateRoute>
+                <Route path="/donate" element={<PrivateRoute>
                     <Oddaj/>
                 </PrivateRoute>}/>
-                <Route path="/logowanie" element={<Login/>}/>
-                <Route path="/rejestracja" element={<Register/>}/>
-                <Route path="/wylogowano" element={<LogOut/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/logout" element={<LogOut/>}/>
             </Routes>
         </BrowserRouter>
         </AuthProvider>
