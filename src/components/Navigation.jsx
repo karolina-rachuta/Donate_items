@@ -37,7 +37,7 @@ const Navigation = () => {
             </ul>
 
             <ul className="menu menu__home">
-                <li className={isHomePage ? "menu__ramka2" : ""}><RouterLink to="/">Home</RouterLink></li>
+                <li className={isHomePage ? "menu__ramka2" : "menu__ramka3"}><RouterLink to="/">Home</RouterLink></li>
                 <li><ScrollLink to="donate">How to Start</ScrollLink></li>
                 <li><ScrollLink to="aboutUs">About Us</ScrollLink></li>
                 <li><ScrollLink to="organizations">Foundation and Organizations</ScrollLink></li>
