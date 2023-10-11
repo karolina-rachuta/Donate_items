@@ -45,6 +45,11 @@ nav {
 
 .menu__login {
   //flex-direction: column;
+  //gap: 1rem;
+
+  li {
+    margin-left: pxToRem(16);
+  }
 
   a {
     text-decoration: none;
@@ -154,16 +159,17 @@ nav {
   align-items: center;
   width: 100%;
   text-align: left;
+
   &.open {
     display: flex;
   }
+
   @media only screen and (min-width: 585px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
   }
-
 
 
   ul {
