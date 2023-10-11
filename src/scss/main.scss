@@ -29,6 +29,7 @@ html, body {
   width: 100%;
   max-width: 1700px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .btn {
@@ -44,3 +45,4 @@ html, body {
   border: pxToRem(0.75) solid $fourth-color;
   cursor: pointer;
 }
+

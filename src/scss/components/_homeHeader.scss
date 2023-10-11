@@ -82,6 +82,13 @@ nav {
   text-align: center;
 }
 
+.menu__ramka3 {
+  border: pxToRem(0.75) solid transparent;
+  padding-top: pxToRem(9);
+  padding-bottom: pxToRem(9);
+  width: pxToRem(80);
+  text-align: center;
+}
 .menu__home {
   font-size: 1.125rem;
   color: $fourth-color;
