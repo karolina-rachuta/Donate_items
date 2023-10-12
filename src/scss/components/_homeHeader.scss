@@ -169,6 +169,10 @@ nav {
   width: 100%;
   text-align: left;
   margin-top: pxToRem(30);
+  padding-top: pxToRem(20);
+  padding-bottom: pxToRem(20);
+  border-top: pxToRem(0.75) solid $fourth-color;
+  border-bottom: pxToRem(0.75) solid $fourth-color;
 
   &.open {
     display: flex;
@@ -180,6 +184,9 @@ nav {
     align-items: center;
     text-align: center;
     margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    border: none;
   }
 
 
@@ -219,13 +226,17 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 12.75rem;
+    margin-top: pxToRem(100);
     text-align: center;
-    margin-right: pxToRem(40);
+    //margin-right: pxToRem(40);
     color: $fourth-color;
     position: relative;
     z-index: 1;
     gap: 1rem;
+    @media only screen and (min-width: 700px) {
+      margin-right: pxToRem(40);
+      margin-top: pxToRem(204);
+    }
 
     p {
       font-size: 2.375rem;
