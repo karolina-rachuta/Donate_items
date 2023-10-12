@@ -17,7 +17,12 @@
 
   .option__box {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: pxToRem(30);
+    @media only screen and (min-width: 650px) {
+      flex-direction: row;
+    }
 
     div {
       font-size: pxToRem(24);
@@ -32,7 +37,7 @@
 
   p {
     text-align: center;
-    width: pxToRem(600);
+    max-width: pxToRem(600);
     font-size: pxToRem(22);
     line-height: 1.36;
     color: $fourth-color;

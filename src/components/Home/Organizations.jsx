@@ -29,9 +29,9 @@ const Organizations = () => {
                     <div onClick={() => setPage(1)} className={page === 1 ? 'active' : undefined}>Organizations</div>
                     <div onClick={() => setPage(2)} className={page === 2 ? 'active' : undefined}>Local Charities</div>
                 </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus facere fugiat in
-                        libero maiores natus obcaecati velit veniam. Aliquam autem dicta eaque eos explicabo inventore
-                        perspiciatis ratione, rerum ut.5</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus facere fugiat in
+                    libero maiores natus obcaecati velit veniam. Aliquam autem dicta eaque eos explicabo inventore
+                    perspiciatis ratione, rerum ut.5</p>
 
                 {getPage()}
             </div>
