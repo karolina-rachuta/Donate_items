@@ -64,7 +64,7 @@ const Navigation = () => {
                 <li className={isHomePage ? "menu__ramka2" : "menu__ramka3"}><RouterLink to="/">Home</RouterLink></li>
                 <li><ScrollLink to="donate">How to Start</ScrollLink></li>
                 <li><ScrollLink to="aboutUs">About Us</ScrollLink></li>
-                <li><ScrollLink to="organizations">Foundation and Organizations</ScrollLink></li>
+                <li><ScrollLink to="organizations">Foundations and Organizations</ScrollLink></li>
                 <li><ScrollLink to="contact">Contact</ScrollLink></li>
             </ul>
         </nav>

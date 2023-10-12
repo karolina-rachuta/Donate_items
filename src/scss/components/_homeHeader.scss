@@ -52,6 +52,11 @@ nav {
 
   li {
     margin-left: pxToRem(16);
+
+    &:hover {
+      color: black;
+      scale: 1.1;
+    }
   }
 
   a {
@@ -135,7 +140,8 @@ nav {
 }
 
 .menu__ramka2 {
-  border: pxToRem(0.75) solid $fourth-color;
+  border: pxToRem(0.75) solid transparent;
+  border-bottom: pxToRem(1.2) solid $fourth-color; ;
   padding-top: pxToRem(9);
   padding-bottom: pxToRem(9);
   width: pxToRem(80);
@@ -152,7 +158,7 @@ nav {
 
 
 .menu__home {
-  gap: 1.5rem;
+  gap: 1.7rem;
   font-size: 1.125rem;
   color: $fourth-color;
   font-family: $font-base;
@@ -186,11 +192,7 @@ nav {
     color: $fourth-color;
     font-family: $font-base;
     text-align: center;
-    //margin: 0.2rem 0.5rem;
 
-    //@media only screen and (min-width: 558px){
-    //  margin: 0;
-    //}
     &:hover {
       color: black;
     }
@@ -198,12 +200,9 @@ nav {
 
   li {
     text-align: center;
-    @media only screen and (min-width: 558px) {
-
-    }
 
     &:hover {
-      scale: 1.1;
+      scale: 1.05;
     }
   }
 }
