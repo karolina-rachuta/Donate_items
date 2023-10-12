@@ -141,7 +141,7 @@ nav {
 
 .menu__ramka2 {
   border: pxToRem(0.75) solid transparent;
-  border-bottom: pxToRem(1.2) solid $fourth-color; ;
+  border-bottom: pxToRem(1.2) solid $fourth-color;;
   padding-top: pxToRem(9);
   padding-bottom: pxToRem(9);
   width: pxToRem(80);
@@ -253,19 +253,28 @@ nav {
         a, button {
           cursor: pointer;
         }
-        a {
-          &:hover {
-            scale: 1.1;
-            color: black;
-          }
-        }
+        //a {
+        //  min-width: pxToRem(252);
+        //  width: 100%;
+        //  &:hover {
+        //    scale: 1.1;
+        //    color: black;
+        //  }
+        //}
       }
 
       a {
         text-decoration: none;
-        width: 40%;
+        //width: 40%;
+        min-width: pxToRem(252);
+        width: 100%;
         border: 0.046875rem solid $fourth-color;
         background-color: #fff;
+
+        &:hover {
+          scale: 1.1;
+          color: black;
+        }
 
         button {
           border: none;
