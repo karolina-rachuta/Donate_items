@@ -1,14 +1,20 @@
 .formHeader__container {
   background-image: url(.././assets/Form-Hero-Image.jpg);
-  background-size: 100% auto;
+  background-size: auto 100vh;
   background-repeat: no-repeat;
-  background-position: -5rem center;
+  background-position: -5rem 4rem;
   min-height: pxToRem(740);
+  height: 100%;
   max-height: 100vh;
   position: relative;
+  @media only screen and (min-width: 558px) {
+    background-size: 100% auto;
+    background-position: -20rem center;
+  }
   @media only screen and (min-width: 1470px) {
     //background-position: 0 top;
     background-size: 70% auto;
+    background-position: -5rem center;
   }
 
   &::after {
@@ -33,17 +39,23 @@
   align-items: center;
 
   .formHero__box {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: pxToRem(100);
     text-align: center;
-    margin-right: pxToRem(55);
     color: $fourth-color;
     position: relative;
     z-index: 1;
     gap: 1rem;
+    margin-top: pxToRem(10);
+    @media only screen and (min-width: 558px) {
+      justify-content: center;
+      align-items: end;
+      margin-top: pxToRem(100);
+      margin-right: pxToRem(60);
+    }
 
     .formHero__hdl {
       font-size: pxToRem(38);
@@ -60,28 +72,31 @@
     }
 
     .formHero__rhombus {
+      width: 90%;
       display: flex;
+      justify-content: center;
       margin-top: pxToRem(50);
       gap: pxToRem(20);
-      //flex-direction: column;
-      //@media only screen and (min-width: 800px) {
-      //  flex-direction: row;
-      //}
+      margin-bottom: pxToRem(60);
+      @media only screen and (min-width: 558px) {
+        width: 100%;
+        justify-content: end;
+        gap: pxToRem(15);
+      }
 
       div {
-        border: pxToRem(0.75) solid #000000;
+        border: pxToRem(0.75) solid transparent;
         transform: rotate(45deg);
-        width: pxToRem(120);
-        height: pxToRem(120);
+        width: pxToRem(70);
+        height: pxToRem(70);
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: pxToRem(22);
-        //line-height: 1.23 ;
         @media only screen and (min-width: 950px) {
+          border: pxToRem(0.75) solid #000000;
           width: pxToRem(190);
           height: pxToRem(190);
-          //border: pxToRem(0.75) solid $third-color;
         }
         //@media only screen and (min-width: 1470px) {
         //  border: pxToRem(0.75) solid #000000;
@@ -89,7 +104,12 @@
 
         p {
           transform: rotate(-45deg);
-          line-height: 30px;
+          //line-height: 18px;
+          font-size: pxToRem(18);
+          @media only screen and (min-width: 558px){
+            line-height: 1.5;
+            font-size: pxToRem(22);
+          }
         }
       }
     }

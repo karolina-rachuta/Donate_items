@@ -23,7 +23,7 @@
     left: 0;
     right: 0;
     background: white;
-    opacity: 0.5;
+    opacity: 0.1;
     z-index: 0;
     @media only screen and (min-width: 1200px) {
       opacity: 0;
@@ -44,11 +44,20 @@ nav {
   position: relative;
   z-index: 1;
   align-items: center;
+  background-color: #fff;
+  @media only screen and (min-width: 558px){
+    background-color: transparent;
+  }
 }
 
 .menu__login {
-  //flex-direction: column;
-  //gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 558px){
+    justify-content: end;
+  }
 
   li {
     margin-left: pxToRem(16);
@@ -277,7 +286,7 @@ nav {
       a {
         text-decoration: none;
         //width: 40%;
-        min-width: pxToRem(252);
+        max-width: pxToRem(250);
         width: 100%;
         border: 0.046875rem solid $fourth-color;
         background-color: #fff;

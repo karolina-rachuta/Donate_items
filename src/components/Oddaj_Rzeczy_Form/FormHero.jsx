@@ -6,7 +6,7 @@ const FormHero = () => {
         <div>
             <div className="formHero__container">
                 <div className="formHero__box">
-                    <p className="formHero__hdl">Give items you don not need <br/>to those in need</p>
+                    <p className="formHero__hdl">Give items you do not need <br/>to those in need</p>
                     <img src={decoration} alt="Decoration"/>
                     <p className="formHero__lead">Four simple steps are enough:</p>
                     <div className="formHero__rhombus">
