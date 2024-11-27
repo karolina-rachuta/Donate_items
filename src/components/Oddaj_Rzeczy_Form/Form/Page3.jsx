@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { FormContext } from '../FormGive.jsx';
 
 const Page3 = () => {
@@ -16,6 +16,7 @@ const Page3 = () => {
     const handleSelectChangeLocation = (e) => {
         set('selectLocation', e.target.value);
     };
+
     // Add/Remove checked item from list
     const handleCheck = (e) => {
         let updatedList = [...checks];
